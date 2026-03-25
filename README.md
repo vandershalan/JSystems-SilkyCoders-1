@@ -28,9 +28,9 @@ To repozytorium zawiera materiały do kursu **AI w Programowaniu** prowadzonego 
 
 Główne notatki i zasoby kursu znajdziesz w folderze `/docs`:
 
-- 📓 [**Course Notes — AI in Programming**](./docs/Course%20Notes%20-%20AI%20in%20Programming.md) — Główne notatki kursu: trendy, narzędzia, benchmarki, metodologie agentic coding, case studies (OpenClaw, Microsoft), best practices i wiele więcej.
+- 📓 [**Course Notes — AI in Programming**](course-materials/Course%20Notes%20-%20AI%20in%20Programming.md) — Główne notatki kursu: trendy, narzędzia, benchmarki, metodologie agentic coding, case studies (OpenClaw, Microsoft), best practices i wiele więcej.
 
-- Więcej materiałów (podsumowania dni, specjalistyczne tematy) znajdziesz w folderze [`/docs`](./docs).
+- Więcej materiałów (podsumowania dni, specjalistyczne tematy) znajdziesz w folderze [`/docs`](course-materials).
 
 ---
 
