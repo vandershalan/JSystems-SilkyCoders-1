@@ -1,0 +1,688 @@
+2026-03-25 08:06:07 From JSystems Szkolenia to Everyone:
+	Dzień 1 – agenda:
+	09:00  Start + zasady pracy
+	09:15  Sprawdzenie środowiska (Claude Code, Java, Git)
+	09:35  Runda zapoznawcza + pytania startowe
+	10:00  Quiz kalibracyjny (weryfikacja pre-work)
+	10:25  Moduł 1.1 – The New Frontier (rewolucja AI, mity, dane, case studies)
+	11:15  ☕ PRZERWA
+	11:30  Moduł 1.2 – Modele, Prompty, Vibe Coding / Engineering + demo LMArena + GLM
+	12:35  Moduł 1.3 – Mission Briefing (projekt tygodnia)
+	13:00  🍽️ PRZERWA OBIAD (30 min)
+	13:30  Moduł 1.3 – Setup Claude Code CLI + Desktop App + pierwsze komendy
+	14:30  ☕ OPCJONALNA PRZERWA
+	14:40  Moduł 1.4 – Narzędzia: CLI vs Desktop vs IntelliJ ACP
+	15:35  WezTerm – dlaczego warto (mini-moduł) + Ollama / alternatywne endpointy CC
+	15:50  Podsumowanie dnia
+	16:00  Koniec
+	
+2026-03-25 08:16:18 From JSystems Szkolenia to Everyone:
+	https://wezterm.org/install/windows.html#installing-on-windows
+	
+2026-03-25 08:17:19 From JSystems Szkolenia to Everyone:
+	Zasady pracy:
+	👍 = jasne / działa / jestem z wami
+	❓ = pytanie (wrzuć na chat lub powiedz głosem)
+	🐛 = coś nie działa / blokada — mów od razu!
+	🔵 = zadanie dla zaawansowanych (opcjonalne, równolegle)
+	Pytania od razu. Przerywajcie.
+	
+2026-03-25 08:25:44 From JSystems Szkolenia to Everyone:
+	claude --version
+	java --version
+	node --version
+	git --version
+	
+2026-03-25 08:28:50 From Seba to Everyone:
+	Claude Team - Silky :)
+	
+2026-03-25 08:29:00 From Łukasz to Everyone:
+	Claude Team · DockIT
+	
+2026-03-25 08:30:51 From JSystems Szkolenia to Everyone:
+	Runda intro (2-3 min / osoba):
+	1) Rola + stack (Java stack, czy też frontend/DevOps?)
+	2) Jak dziś używasz AI? (narzędzia, jak często, do czego)
+	3) Największa frustracja lub rozczarowanie z AI
+	4) Co chcesz wynieść z tego tygodnia?
+	
+2026-03-25 09:12:21 From JSystems Szkolenia to Everyone:
+	Pytanie otwarte — wrócimy do niego na koniec tygodnia:
+	
+	"Czy 20 000 linii kodu w 3 dni to dla Ciebie nowa norma?
+	A może już jest? Co by to zmieniło w Twoim zespole?"
+	— inspiracja: Kubryński, DevTalk Trio
+	
+2026-03-25 09:15:35 From JSystems Szkolenia to Everyone:
+	Pytanie otwarte — wrócimy do niego na koniec tygodnia:
+	
+	"Czy 20 000 linii kodu w 3 dni to dla Ciebie nowa norma?
+	A może już jest? Co by to zmieniło w Twoim zespole?"
+	— inspiracja: Kubryński, DevTalk Trio
+	
+2026-03-25 09:19:29 From JSystems Szkolenia to Everyone:
+	Badania AI w programowaniu:
+	
+	Stanford/GitHub (120K devs):
+	https://www.youtube.com/watch?v=JvosMkuNxF8
+	
+	METR (07.2025 — doświadczeni devs, OS projekty):
+	https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/
+	
+	SSRN (12.2025 — ukryte koszty AI):
+	https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5842302
+	
+2026-03-25 09:24:02 From JSystems Szkolenia to Everyone:
+	https://platform.openai.com/tokenizer 
+	https://tiktokenizer.vercel.app/
+	
+2026-03-25 09:30:09 From Seba to Everyone:
+	"Please help me find a way to set the cache in Spring Boot in the OKD environment." vs "Poszukaj mi możliwości ustawienia cache w spring boot w środowisku OKD." - po polsku o jeden token mniej ;)
+	
+2026-03-25 10:09:09 From JSystems Szkolenia to Everyone:
+	https://www.tabnine.com/
+	
+2026-03-25 10:14:38 From JSystems Szkolenia to Everyone:
+	https://www.pcmag.com/news/meta-security-researchers-openclaw-ai-agent-accidentally-deleted-her-emails
+	
+2026-03-25 10:20:38 From JSystems Szkolenia to Everyone:
+	11:30 koniec przerwy :)
+	
+2026-03-25 10:34:36 From JSystems Szkolenia to Everyone:
+	https://docs.docker.com/ai/sandboxes/ 
+	
+	Docker Sandboxes
+	
+2026-03-25 10:41:20 From JSystems Szkolenia to Everyone:
+	Atention - context retrival w dużym oknie kontekstowym dla Opus 4.6 - 76% dla 1M tokenów okna
+	https://www.anthropic.com/news/claude-opus-4-6#evaluating-claude-opus-46
+	
+2026-03-25 10:43:48 From JSystems Szkolenia to Everyone:
+	https://artificialanalysis.ai/evaluations/omniscience 
+	
+	Hallucination Index
+	
+2026-03-25 10:46:39 From JSystems Szkolenia to Everyone:
+	https://developers.openai.com/cookbook/examples/using_logprobs 
+	
+	Log probs w Open AI
+	
+2026-03-25 10:49:46 From JSystems Szkolenia to Everyone:
+	https://chatgpt.com/codex
+	
+2026-03-25 10:53:02 From JSystems Szkolenia to Everyone:
+	Badania AI w programowaniu:
+	
+	Stanford/GitHub (120K devs):
+	https://www.youtube.com/watch?v=JvosMkuNxF8
+	
+	METR (07.2025 — doświadczeni devs, OS projekty):
+	https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/
+	
+	SSRN (12.2025 — ukryte koszty AI):
+	https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5842302
+	
+2026-03-25 10:57:39 From JSystems Szkolenia to Everyone:
+	Case study: Peter Steinberger + OpenClaw
+	
+	- 1000–1500 commitów dziennie z agentami AI
+	- 50 równoległych agentów do triażu PR
+	- 220K gwiazdek na GitHubie w kilka tygodni
+	- Dołączył do OpenAI w lutym 2026
+	
+	Artykuł: https://steipete.me/posts/2025/shipping-at-inference-speed
+	GitHub (wykres commitów): https://github.com/steipete
+	
+2026-03-25 11:02:16 From JSystems Szkolenia to Everyone:
+	https://github.com/openclaw/openclaw
+	
+2026-03-25 11:03:30 From JSystems Szkolenia to Everyone:
+	https://developers.openai.com/codex/subagents#process-csv-batches-with-subagents-experimental 
+	
+	50 agentów na raz od Petera
+	
+2026-03-25 11:05:36 From JSystems Szkolenia to Everyone:
+	Case study: Microsoft + AI
+	
+	"Moim celem jest wyeliminowanie każdej linii C i C++
+	z Microsoftu do 2030 roku."
+	— Galen Hunt, Principal Software Engineer, CoreAI Microsoft
+	
+	North Star: "1 inżynier, 1 miesiąc, 1 milion linii kodu"
+	Strategia: kombinacja AI + algorytmów do przepisywania codebase'ów.
+	
+	LinkedIn: https://www.linkedin.com/posts/galenh_principal-software-engineer-coreai-microsoft-activity-7407863239289729024-WTzf
+	
+2026-03-25 11:08:24 From JSystems Szkolenia to Everyone:
+	Case study PL: Kubryński, Szydło, Pilimon — Architekt Jutra
+	
+	"6 mitów o AI w SDLC" (live, 2026):
+	https://www.youtube.com/watch?v=ioJkmqNFjwk
+	
+	Skill Panel (Kubryński): 100% kodu z AI od >2 lat.
+	Podejście: spec-driven + Claude + code review.
+	
+	Architekt Jutra: https://architektjutra.pl
+	
+2026-03-25 11:10:15 From JSystems Szkolenia to Everyone:
+	Realny wpływ AI na ekosystem IT:
+	
+	- TailwindCSS: spadek ruchu na docs → problem z przychodami OSS
+	  https://www.youtube.com/watch?v=luhgjBrRulk
+	
+	- StackOverflow: umierający
+	  https://www.youtube.com/watch?v=Gy0fp4Pab0g
+	
+	- 60% wyszukiwań Google bez kliknięcia (AI search)
+	
+	- Kursy video: Udemy i podobne tracą użytkowników
+	  https://www.youtube.com/watch?v=WCGTQBCE3FA
+	
+2026-03-25 11:33:19 From JSystems Szkolenia to Everyone:
+	https://www.qodo.ai/ 
+	Open Source Agent do Review
+	
+2026-03-25 11:36:04 From Tom to Everyone:
+	https://qodo-merge-docs.qodo.ai/installation/gitlab/
+	
+2026-03-25 11:51:53 From JSystems Szkolenia to Everyone:
+	Główne modele LLM (marzec 2026):
+	
+	Anthropic:  Claude Opus 4.6, Sonnet 4.6, Haiku 4.5
+	OpenAI:     o4, o3-mini, GPT-5.2
+	Google:     Gemini 2.5 Pro, Flash 2.0
+	Meta:       Llama 4 (open source)
+	Open source: GLM-5 (ZhipuAI), GLM-4.7, Minimax M2.1
+	
+	Benchmarki do wyboru modelu:
+	- SWE-Bench (coding tasks): https://www.swebench.com/
+	- Terminal-Bench: https://www.tbench.ai/leaderboard/terminal-bench/2.0
+	- Tool Calling: https://gorilla.cs.berkeley.edu/leaderboard.html
+	- LMArena WebDev (głosowanie ludzi!): https://arena.ai/leaderboard/code
+	
+2026-03-25 11:52:32 From JSystems Szkolenia to Everyone:
+	https://arena.ai/leaderboard/code
+	
+2026-03-25 12:03:43 From JSystems Szkolenia to Everyone:
+	https://arena.ai/code
+	
+2026-03-25 12:05:27 From JSystems Szkolenia to Everyone:
+	Ćwiczenie: Vibe Coding Battle w LMArena
+	
+	1. Wejdźcie na: https://arena.ai/leaderboard/code
+	2. Kliknijcie "Battle" (lub "Arena")
+	3. Wklejcie ten prompt:
+	
+	---
+	Build a HTML website for Steve's PC Repair.
+	High-contrast dark mode + bold condensed headings +
+	animated ticker + chunky category chips + magnetic CTA.
+	
+	Include the disclaimer that Steve will not work on Macs,
+	he hates them and their users, and include an origin story
+	as to why.
+	---
+	
+	4. Porównajcie dwie wersje które dostaniecie
+	5. Zagłosujcie na lepszą — a POTEM zobaczcie które modele to były
+	6. Wrzućcie na chat co wybraliście i dlaczego
+	
+2026-03-25 12:06:30 From JSystems Szkolenia to Everyone:
+	Build a HTML website for Steve's PC Repair.
+	High-contrast dark mode + bold condensed headings +
+	animated ticker + chunky category chips + magnetic CTA.
+	
+	Include the disclaimer that Steve will not work on Macs,
+	he hates them and their users, and include an origin story
+	as to why.
+	
+2026-03-25 12:12:04 From JSystems Szkolenia to Everyone:
+	Search newest models very good in programming in Java, search for information and reviews from X.com only, so only search in tweets on X.com, where people discuss which models and which tools are the best for Java development.
+	
+2026-03-25 12:16:11 From JSystems Szkolenia to Everyone:
+	X.com research - tools and models for JAva:
+	https://grok.com/share/bGVnYWN5LWNvcHk_84731f46-8622-44ad-b28a-83458b71fc96
+	
+2026-03-25 12:17:41 From JSystems Szkolenia to Everyone:
+	https://replit.com/
+	
+2026-03-25 12:19:11 From JSystems Szkolenia to Everyone:
+	13:50 koniec przerwy :)
+	
+2026-03-25 12:20:42 From Seba to Everyone:
+	$ claude
+	Warning: no stdin data received in 3s, proceeding without it. If piping from a slow command, redirect stdin explicitly: < /dev/null to skip, or wait longer.
+	Error: Input must be provided either through stdin or as a prompt argument when using --print
+	
+2026-03-25 12:21:31 From Patryk to Everyone:
+	Odpalcie stad:
+	 AppData\Local\Programs\Git\bin\bash.exe
+	
+2026-03-25 12:27:10 From JSystems Szkolenia to Everyone:
+        Windows Terminal config
+	{
+	    "$help": "https://aka.ms/terminal-documentation",
+	    "$schema": "https://aka.ms/terminal-profiles-schema",
+	    "actions": 
+	    [
+	        {
+	            "command": 
+	            {
+	                "action": "copy",
+	                "singleLine": false
+	            },
+	            "id": "User.copy.644BA8F2"
+	        },
+	        {
+	            "command": "paste",
+	            "id": "User.paste"
+	        },
+	        {
+	            "command": "find",
+	            "id": "User.find"
+	        },
+	        {
+	            "command": 
+	            {
+	                "action": "splitPane",
+	                "split": "auto",
+	                "splitMode": "duplicate"
+	            },
+	            "id": "User.splitPane.A6751878"
+	        }
+	    ],
+	    "copyFormatting": "none",
+	    "copyOnSelect": false,
+	    "defaultProfile": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+	    "keybindings": 
+	    [
+	        {
+	            "id": "User.copy.644BA8F2",
+	            "keys": "ctrl+c"
+	        },
+	        {
+	            "id": "User.find",
+	            "keys": "ctrl+shift+f"
+	        },
+	        {
+	            "id": "User.paste",
+	            "keys": "ctrl+v"
+	        },
+	        {
+	            "id": "User.splitPane.A6751878",
+	            "keys": "alt+shift+d"
+	        }
+	    ],
+	    "newTabMenu": 
+	    [
+	        {
+	            "type": "remainingProfiles"
+	        }
+	    ],
+	    "profiles": 
+	    {
+	        "defaults": {},
+	        "list": 
+	        [
+	            {
+	                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+	                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+	                "hidden": false,
+	                "name": "Windows PowerShell"
+	            },
+	            {
+	                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+	                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+	                "hidden": false,
+	                "name": "Command Prompt"
+	            },
+	            {
+	                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+	                "hidden": true,
+	                "name": "Ubuntu",
+	                "source": "Windows.Terminal.Wsl"
+	            },
+	            {
+	                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+	                "hidden": false,
+	                "name": "Azure Cloud Shell",
+	                "source": "Windows.Terminal.Azure"
+	            },
+	            {
+	                "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
+	                "hidden": false,
+	                "name": "Ubuntu",
+	                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
+	            },
+	            {
+	                "font": 
+	                {
+	                    "face": "JetBrainsMono Nerd Font Mono"
+	                },
+	                "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+	                "hidden": false,
+	                "name": "Git Bash",
+	                "source": "Git"
+	            },
+	            {
+	                "guid": "{df6e8398-0130-5bd4-a76b-dc572f71d799}",
+	                "hidden": false,
+	                "name": "Developer Command Prompt for VS 2022",
+	                "source": "Windows.Terminal.VisualStudio"
+	            },
+	            {
+	                "guid": "{93b36f96-bb8e-5909-9e86-a52e3f4b1bb8}",
+	                "hidden": false,
+	                "name": "Developer PowerShell for VS 2022",
+	                "source": "Windows.Terminal.VisualStudio"
+	            },
+	            {
+	                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+	                "hidden": false,
+	                "name": "PowerShell",
+	                "source": "Windows.Terminal.PowershellCore"
+	            },
+	            {
+	                "background": null,
+	                "colorScheme": "One Half Dark",
+	                "guid": "{7f012cd9-9cb0-57c6-a69c-81d7aa37502f}",
+	                "hidden": false,
+	                "name": "Ubuntu",
+	                "source": "Microsoft.WSL"
+	            }
+	        ]
+	    },
+	    "schemes": [],
+	    "themes": []
+	}
+	
+2026-03-25 12:27:29 From JSystems Szkolenia to Everyone:
+	Bash
+	{
+	                "font": 
+	                {
+	                    "face": "JetBrainsMono Nerd Font Mono"
+	                },
+	                "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+	                "hidden": false,
+	                "name": "Git Bash",
+	                "source": "Git"
+	            },
+	
+2026-03-25 12:28:10 From JSystems Szkolenia to Everyone:
+	comand line "C:/Program Files/Git/bin/bash.exe" -i -l
+	
+2026-03-25 12:28:19 From JSystems Szkolenia to Everyone:
+	Icon C:/Program Files/Git/mingw64/share/git/git-for-windows.ico
+	
+2026-03-25 12:55:57 From JSystems Szkolenia to Everyone:
+	Prompt Engineering — fundamenty:
+	
+	ZERO-SHOT:
+	"Napisz test jednostkowy dla metody calculateInterest()"
+	
+	FEW-SHOT:
+	"Napisz test jednostkowy.
+	Przykład dobrego testu u nas: [przykład]
+	Teraz napisz dla: calculateInterest()"
+	
+	CHAIN-OF-THOUGHT:
+	"Pomyśl krok po kroku zanim odpiszesz.
+	Co robi ta metoda? Co można przetestować?
+	Jakie edge cases są ważne w kontekście bankowym?"
+	
+	ROLE + KONTEKST:
+	"Jesteś doświadczonym Java developerem pracującym
+	z Spring Boot 3.2 w środowisku bankowym z wysokimi
+	wymaganiami bezpieczeństwa. Napisz..."
+	
+2026-03-25 12:59:27 From JSystems Szkolenia to Everyone:
+	Techniki prompt engineeringu:
+	https://devpowers.com/szkolenia/generative-ai-08-12-2025/#slide-8
+	
+2026-03-25 13:00:57 From JSystems Szkolenia to Everyone:
+	https://www.promptingguide.ai/techniques/fewshot 
+	Few shot
+	
+2026-03-25 13:04:38 From JSystems Szkolenia to Everyone:
+	https://www.promptcowboy.ai/ 
+	
+	Generator Promptów
+	
+2026-03-25 13:07:14 From JSystems Szkolenia to Everyone:
+	https://github.com/LucasMatuszewski/JSystems-SilkyCoders-1/blob/master/course-materials/Prompt%20examples/Symulacja%20napadu%20-%20agresja%20-%20trening%20bezpiecze%C5%84stwa.md
+	
+2026-03-25 13:08:42 From JSystems Szkolenia to Everyone:
+	https://www.promptingguide.ai/techniques/consistency 
+	
+	Self Consistency
+	
+2026-03-25 13:10:43 From JSystems Szkolenia to Everyone:
+	Prompt Engineering vs Context Engineering:
+	
+	PROMPT ENGINEERING — jak formułujesz zapytanie:
+	• zero-shot, few-shot, chain-of-thought, role prompting
+	• techniki budowania pojedynczego zapytania
+	• = JAK rozmawiasz z modelem
+	
+	CONTEXT ENGINEERING — co wkładasz do okna kontekstowego:
+	• CLAUDE.md — stały kontekst projektu dla agenta
+	• tylko to co potrzebne i relevantne (snajper, nie shotgun)
+	• unikanie "context rot" — za dużo śmieci = model się gubi
+	• = CO model widzi i z czym pracuje
+	
+	W 2026: Context Engineering > Prompt Engineering
+	
+	Artykuł Anthropic:
+	https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
+	
+2026-03-25 13:12:27 From JSystems Szkolenia to Everyone:
+	Context Rot — pułapka długich sesji:
+	
+	Co to: model gubi się w bardzo długim kontekście.
+	"Lost in the Middle" — instrukcje z początku sesji
+	bywają ignorowane po 50+ wiadomościach.
+	
+	Objawy:
+	• agent "zapomina" o wcześniejszych ustaleniach
+	• zaczyna robić rzeczy których zakazaliście
+	• wyniki gorsze mimo że nic nie zmieniliście
+	
+	Rozwiązania:
+	• /compact w Claude Code — kompresuje historię sesji
+	• nowa sesja + CLAUDE.md — agent odbudowuje kontekst
+	  z pliku, nie z historii
+	• commituj regularnie → możesz wrócić do dobrego stanu
+	• małe zadania > jedna mega-sesja
+	
+	Zasada: wolę 5 czystych sesji niż 1 mega-sesję.
+	
+2026-03-25 13:13:56 From JSystems Szkolenia to Everyone:
+	Vibe Coding (Andrej Karpathy, 2025):
+	https://x.com/karpathy/status/1886192184808149383
+	
+	"Fully give in to the vibes, embrace exponentials,
+	forget that the code even exists."
+	
+	KIEDY OK:
+	✅ jednorazowy skrypt do obróbki danych
+	✅ throwaway prototyp UI do demonstracji
+	✅ nauka nowej technologii
+	✅ strona Steve'a z PC Repair ;)
+	
+	KIEDY NIE:
+	❌ kod produkcyjny bankowy
+	❌ logika autoryzacji i uwierzytelniania
+	❌ przetwarzanie danych osobowych (RODO)
+	❌ cokolwiek co przechodzi przez audit
+	❌ legacy system który ktoś będzie utrzymywać
+	
+2026-03-25 13:16:53 From JSystems Szkolenia to Everyone:
+	Vibe Engineering — 4 filary:
+	
+	1. WERYFIKACJA
+	   Czytasz i rozumiesz co AI wygenerowało.
+	   Nie każdą linię — ale architekturę i krytyczną logikę.
+	   Podpisujesz swoim imieniem.
+	
+	2. SYSTEM WALIDACJI
+	   Dajesz AI narzędzia do samoweryfikacji:
+	   testy które agent sam uruchamia, linter, CI/CD.
+	   "Napisz kod, uruchom testy, napraw błędy, commit."
+	
+	3. PRECYZYJNY KONTEKST
+	   CLAUDE.md, konkretne pliki, zakres zadania.
+	   Snajper, nie shotgun.
+	
+	4. KONTROLA SCOPE
+	   Jasne granice co agent może, a czego nie.
+	   Sandbox, approvals, dedykowany branch.
+	
+2026-03-25 13:23:27 From JSystems Szkolenia to Everyone:
+	https://github.com/LucasMatuszewski/JSystems-SilkyCoders-1/tree/master/course-materials/01-2026-Sinsay-PoC-Returns-Bot/sinsay-documents
+	
+2026-03-25 13:23:37 From JSystems Szkolenia to Everyone:
+	Dane dla agenta jako kontekst
+	
+2026-03-25 13:25:16 From JSystems Szkolenia to Everyone:
+	Java Spring AI:
+	https://spring.io/projects/spring-ai
+	
+2026-03-25 13:29:00 From JSystems Szkolenia to Everyone:
+	https://docs.spring.io/spring-ai/reference/api/chat/openai-chat.html
+	
+	https://docs.spring.io/spring-ai/reference/api/chat/openai-sdk-chat.html 
+	
+	https://github.com/openai/openai-java
+	
+2026-03-25 13:41:52 From JSystems Szkolenia to Everyone:
+	Komponenty UI:
+	
+	https://ai-sdk.dev/docs/ai-sdk-ui 
+	
+	https://www.assistant-ui.com/
+	
+2026-03-25 13:42:00 From JSystems Szkolenia to Everyone:
+	https://github.com/assistant-ui/assistant-ui
+	
+2026-03-25 13:43:03 From JSystems Szkolenia to Everyone:
+	https://github.com/langgraph4j/langgraph4j-copilotkit
+	
+2026-03-25 13:44:21 From JSystems Szkolenia to Everyone:
+	https://github.com/langgraph4j/langgraph4j
+	
+2026-03-25 13:45:47 From JSystems Szkolenia to Everyone:
+	https://github.com/langchain4j/langchain4j
+	
+2026-03-25 13:48:37 From JSystems Szkolenia to Everyone:
+	https://www.copilotkit.ai/use-cases/saas-copilot
+	
+2026-03-25 13:51:07 From JSystems Szkolenia to Everyone:
+	https://github.com/ag-ui-protocol/ag-ui
+	
+2026-03-25 13:51:16 From JSystems Szkolenia to Everyone:
+	https://www.copilotkit.ai/
+	
+2026-03-25 13:55:58 From JSystems Szkolenia to Everyone:
+	Baza lokalna prosta: https://sqlite.org/
+	
+2026-03-25 13:58:43 From JSystems Szkolenia to Everyone:
+	Bazy wektorowe i RAG lokalny:
+	
+	https://www.sqlite.ai/sqlite-vector 
+	
+	https://www.trychroma.com/
+	
+2026-03-25 14:02:55 From JSystems Szkolenia to Everyone:
+	Projekt tygodnia: AI Claim Validator
+	
+	FLOW:
+	Użytkownik → [upload zdjęcie + opis] →
+	  Spring Boot API →
+	    [Claude Haiku Vision — analiza obrazu] →
+	      [Decyzja: zatwierdzić / odrzucić / eskalować] →
+	        [Odpowiedź z uzasadnieniem]
+	
+	STACK:
+	• Java 21 + Spring Boot 3.2
+	• Spring AI (integracja z modelami LLM)
+	• REST API + prosty frontend
+	• OpenRouter API Key (dostarczone przez trenera)
+	• Git — nowe repo od dzisiaj
+	
+	CEL NA KONIEC TYGODNIA:
+	• Działający PoC
+	• Testy jednostkowe i integracyjne
+	• Podstawowy CI/CD workflow
+	
+2026-03-25 14:06:45 From JSystems Szkolenia to Everyone:
+	https://claude.ai/code
+	
+2026-03-25 14:09:39 From JSystems Szkolenia to Everyone:
+	https://z.ai/subscribe
+	
+2026-03-25 14:11:24 From JSystems Szkolenia to Everyone:
+	Claude Code config do zmiany providera:
+	https://github.com/LucasMatuszewski/JSystems-SilkyCoders-1/blob/master/course-materials/.bashrc
+	
+2026-03-25 14:23:34 From JSystems Szkolenia to Everyone:
+	aichat -e add to my .bashrc new env EDITOR set to zed
+
+https://github.com/sigoden/aichat 
+
+Podpowiadanie komend
+	
+2026-03-25 14:36:51 From JSystems Szkolenia to Everyone:
+	MCP standard:
+https://modelcontextprotocol.io/docs/getting-started/intro
+	
+2026-03-25 14:40:05 From JSystems Szkolenia to Everyone:
+	https://agentskills.io/home
+	
+2026-03-25 14:49:56 From JSystems Szkolenia to Everyone:
+	Continue last session
+
+claude --continue
+	
+2026-03-25 14:50:26 From JSystems Szkolenia to Everyone:
+	/resume
+	
+2026-03-25 14:52:54 From JSystems Szkolenia to Everyone:
+	Sandbox Research:
+https://github.com/LucasMatuszewski/JSystems-SilkyCoders-1/blob/master/course-materials/Research/Sandboxing-and-harness-in-Codex-vs-ClaudeCode.md
+	
+2026-03-25 14:56:40 From JSystems Szkolenia to Everyone:
+	https://github.com/LucasMatuszewski/JSystems-SilkyCoders-1/blob/master/course-materials/.bashrc
+	
+2026-03-25 14:57:20 From JSystems Szkolenia to Everyone:
+	https://github.com/LucasMatuszewski/JSystems-SilkyCoders-1/blob/master/.codex/config.toml
+	
+2026-03-25 15:01:26 From Łukasz to Everyone:
+	ok ja muszę uciekać, do jutra
+	
+2026-03-25 15:02:43 From JSystems Szkolenia to Everyone:
+	https://github.com/LucasMatuszewski/JSystems-SilkyCoders-1/tree/master/course-materials/WezTerm 
+
+WezTerm
+	
+2026-03-25 15:06:58 From JSystems Szkolenia to Everyone:
+	https://fonts.google.com/noto/specimen/Noto+Color+Emoji
+	
+2026-03-25 15:10:42 From JSystems Szkolenia to Everyone:
+	https://omarchy.org/
+	
+2026-03-25 15:12:56 From JSystems Szkolenia to Everyone:
+	https://wezterm.org/install/windows.html
+	
+2026-03-25 15:14:11 From JSystems Szkolenia to Everyone:
+	https://code.claude.com/docs/en/terminal-config
+	
+2026-03-25 15:16:53 From JSystems Szkolenia to Everyone:
+	https://www.warp.dev/
+	
+2026-03-25 15:18:39 From JSystems Szkolenia to Everyone:
+	https://docs.atuin.sh/cli/guide/installation/
+	
+2026-03-25 15:20:24 From JSystems Szkolenia to Everyone:
+	https://github.com/alacritty/alacritty
+	
