@@ -10,13 +10,13 @@ if wezterm.config_builder then
 end
 
 -- PERFORMANCE
-config.front_end = "WebGpu"
--- config.front_end = "OpenGL"
+-- config.front_end = "WebGpu" -- for emulated GPU on VM
+-- config.webgpu_power_preference = "LowPower"
+config.front_end = "OpenGL" -- if your GPU supports it
 -- config.front_end = "Software"
-config.webgpu_power_preference = "LowPower"
-config.animation_fps = 60
-config.max_fps = 60
-config.allow_win32_input_mode = false
+-- config.animation_fps = 60
+-- config.max_fps = 60
+-- config.allow_win32_input_mode = false
 
 -- Default shell = Git Bash
 config.default_prog = {
