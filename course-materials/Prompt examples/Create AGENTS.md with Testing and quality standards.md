@@ -19,7 +19,7 @@ well as functionality. And only after testing both with tests and
 linking that there are no problems in the code, the agent can consider
 that the given task is completed.
 
-Additionally, create a new Frontend folder in the main main root
+Additionally, create a new Frontend folder in the main root
 folder. In this new Frontend folder, also create an Agents MD file,
 which will specifically relate to our frontend. This will be a RAT
 application with Time Wind. The most important element at the moment,
@@ -28,7 +28,7 @@ commit approval and task approval by the agent, it should each time
 first run tests, this time, it should be J Unit tests, sorry, it
 should be unit tests, as well as integration tests on the most
 critical and important functionalities. And additionally, it should
-use the Prywright tool to open the page and see what the page looks
+use the Playwright tool to open the page and see what the page looks
 like, analyze its DOM, structure, do a code review of what it created
 itself. And only after visually and functionally verifying that what
 it created works and looks correct. The agent only after this can
