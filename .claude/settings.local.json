@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:blog.jetbrains.com)",
+      "WebFetch(domain:www.jetbrains.com)"
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "context7"
+  ]
+}
