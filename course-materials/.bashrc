@@ -1,6 +1,11 @@
 # Set default editor for CLI tools
 export EDITOR=zed
 
+# Alias to let Claude use all tools without asking for permission
+# Equivalent to `--permission-mode bypassPermissions`.
+# https://code.claude.com/docs/en/permission-modes#skip-all-checks-with-bypasspermissions-mode
+alias clauded="claude --dangerously-skip-permissions"
+
 # Claude Code backend switchers
 # Usage:
 #   claude-or [claude args...]        -> OpenRouter, default model: deepseek/deepseek-v3.2
