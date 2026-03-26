@@ -2,35 +2,35 @@
 **Temat: Od pomysłu do projektu — AI jako Twój PM, Architekt i Konfigurator**
 **Godz. 9:00–16:00 | Zoom online | Grupa: SilkyCoders — Java devs, seniorzy, tech leads, architekci**
 
-> 🎬 = co mowie (dosłownie lub prawie dosłownie)
+> 🎬 = co mówię (dosłownie lub prawie dosłownie)
 > 📺 = co pokazuję na ekranie
 > 💬 = wklejam na Zoom chat (gotowy tekst do skopiowania)
-> 🏋️ = ćwiczenie dla uczestnikow
+> 🏋️ = ćwiczenie dla uczestników
 > ⏱️ = czas bloku
-> 💡 = wskazowka / uwaga dla prowadzącego (nie mow tego głosno)
+> 💡 = wskazówka / uwaga dla prowadzącego (nie mów tego głośno)
 > 🔵 = zadanie dodatkowe dla zaawansowanych (opcjonalne)
 
 ---
 
-## AGENDA DNIA (wyslij na starcie)
+## AGENDA DNIA (wyślij na starcie)
 
 💬 WKLEJ NA CHAT:
 ```text
-Dzien 2 – agenda:
+Dzień 2 – agenda:
 
-=== RANO: DOMKNIECIE DNIA 1 ===
+=== RANO: DOMKNIĘCIE DNIA 1 ===
 09:00  Reset + agenda + projekt tygodnia
-09:10  Sandbox, Permissions, WSL/macOS — bezpieczenstwo agentow
+09:10  Sandbox, Permissions, WSL/macOS — bezpieczeństwo agentów
 09:50  IntelliJ: stara integracja vs nowy ACP Registry + IntelliJ MCP Server
 10:25  Claude Code: komendy i funkcje (Ctrl+G, /loop, /batch, /schedule)
 10:55  ☕ PRZERWA
 
-=== DZIEN 2: OD POMYSLU DO PROJEKTU ===
-11:10  Modul 2.1 — AI jako Twoj PM: PRD, User Stories, Requirements
-12:15  Modul 2.2 — Research + Tech Stack + ADR
+=== DZIEŃ 2: OD POMYSŁU DO PROJEKTU ===
+11:10  Moduł 2.1 — AI jako Twój PM: PRD, User Stories, Requirements
+12:15  Moduł 2.2 — Research + Tech Stack + ADR
 13:00  🍽️ PRZERWA
-13:30  Modul 2.2 cd — UML: Mermaid, PlantUML, architektura
-14:30  Modul 2.3 — MCP, Skills, Sub-agenci, CLAUDE.md
+13:30  Moduł 2.2 cd — UML: Mermaid, PlantUML, architektura
+14:30  Moduł 2.3 — MCP, Skills, Sub-agenci, CLAUDE.md
 15:30  Projekt: decyzja o stacku + kickoff
 15:55  Podsumowanie dnia
 16:00  Koniec
@@ -41,78 +41,78 @@ Dzien 2 – agenda:
 ## 09:00–09:10 — Reset + agenda + projekt tygodnia
 ⏱️ 10 min
 
-🎬 **CO MOWIE:**
+🎬 **CO MÓWIĘ:**
 
-„Dzien dobry! Kciuki jesli mnie slychac i widac.
+„Dzień dobry! Kciuki jeśli mnie słychać i widać.
 
-Zanim wejdziemy w dzien 2 — mam dla Was dobra wiadomosc i zla wiadomosc.
+Zanim wejdziemy w dzień 2 — mam dla Was dobrą wiadomość i zła wiadomość.
 
-Zla: nie zdazylem wczoraj z kilkoma tematami i bedziemy je robic rano. Sa to tematy o bezpieczenstwie i narzędziach, bez ktorych reszta dnia nie ma sensu, wiec to jest absolutny priorytet.
+Zła: nie zdążyłem wczoraj z kilkoma tematami i będziemy je robić rano. Są to tematy o bezpieczeństwie i narzędziach, bez których reszta dnia nie ma sensu, więc to jest absolutny priorytet.
 
-Dobra: mamy projekt. Konkretny. Prawdziwy. I dzisiaj bedziemy go planowac — PRD, architektura, diagramy, decyzje technologiczne — z pomoca agenta. Wyjdziemy z tym dniem z pelnym planem gotowym do implementacji jutro.
+Dobra: mamy projekt. Konkretny. Prawdziwy. I dzisiaj będziemy go planować — PRD, architektura, diagramy, decyzje technologiczne — z pomocą agenta. Wyjdziemy z tym dniem z pełnym planem gotowym do implementacji jutro.
 
-Projekt to chatbot dla Sinsay Fashion — obsługa reklamacji i zwrotow. Zaraz powiem wiecej, ale juz teraz miejcie to z tylu glowy — bo wszystkie cwiczenia będziemy robic pod ten projekt."
+Projekt to chatbot dla Sinsay Fashion — obsługa reklamacji i zwrotów. Zaraz powiem więcej, ale już teraz miejcie to z tyłu głowy — bo wszystkie ćwiczenia będziemy robić pod ten projekt."
 
 💬 WKLEJ NA CHAT:
 ```text
 Projekt tygodnia: Sinsay Complaint & Returns Chatbot
 
 Flow:
-1) Formularz: upload zdjecia + opis + wybor (reklamacja / zwrot)
-2) Agent analizuje zdjecie (vision model — osobne wywolanie LLM)
+1) Formularz: upload zdjęcia + opis + wybór (reklamacja / zwrot)
+2) Agent analizuje zdjęcie (vision model — osobne wywołanie LLM)
 3) Agent czyta dokumenty proceduralne (MD files — co wolno, co nie)
-4) Podejmuje decyzje i uzasadnienie (drugie wywolanie LLM)
-5) Klient moze kontynuowac rozmowe na chacie
+4) Podejmuje decyzję i uzasadnienie (drugie wywołanie LLM)
+5) Klient może kontynuować rozmowę na chacie
 
-Stack (bezpieczna sciezka):
+Stack (bezpieczna ścieżka):
 Java 21 + Spring Boot + OpenAI Java SDK lub Spring AI
 Frontend: React + Vercel AI SDK lub AssistantUI
 Baza: SQLite (sesje, historia czatu)
 
 Opcjonalnie:
-+ RAG: SQLite Vector lub ChromaDB (srednio-zaawansowani)
-+ LangGraph4j + CopilotKit + AG-UI (zaawansowani, na wlasne ryzyko)
++ RAG: SQLite Vector lub ChromaDB (średnio-zaawansowani)
++ LangGraph4j + CopilotKit + AG-UI (zaawansowani, na własne ryzyko)
 ```
 
 ---
 
-## 09:10–09:50 — Sandbox, Permissions, WSL/macOS, bezpieczenstwo
+## 09:10–09:50 — Sandbox, Permissions, WSL/macOS, bezpieczeństwo
 ⏱️ 40 min
 
-🎬 **CO MOWIE:**
+🎬 **CO MÓWIĘ:**
 
-„Zaczynamy od bezpieczenstwa.
+„Zaczynamy od bezpieczeństwa.
 
-Wiem, ze 'bezpieczenstwo agentow' brzmi jak temat na osobny kurs albo jak cos czym zajmuje sie tylko security team. Ale nie — to jest cos co kazdy z Was musi rozumiec, bo to wy prowadzicie agentow w swoich projektach.
+Wiem, że 'bezpieczeństwo agentów' brzmi jak temat na osobny kurs albo jak coś czym zajmuje się tylko security team. Ale nie — to jest coś co każdy z Was musi rozumieć, bo to wy prowadzicie agentów w swoich projektach.
 
-Zadajcie sobie pytanie: co by sie stalo, gdybyscie napisali agentowi 'wyczys projekt, zacznijmy od nowa' — a agent zrozumial to zbyt dosłownie? Albo agent przypadkowo wgral klucze produkcyjne do publicznego repo? Albo odczytal plik `.env` i wyslal go w odpowiedzi?
+Zadajcie sobie pytanie: co by się stalo, gdybyście napisali agentowi 'wyczys projekt, zacznijmy od nowa' — a agent zrozumiał to zbyt dosłownie? Albo agent przypadkowo wgrał klucze produkcyjne do publicznego repo? Albo odczytał plik `.env` i wysłał go w odpowiedzi?
 
-To nie sa SF. To sa rzeczy ktore dzieja sie naprawde.
+To nie są SF. To są rzeczy które dzieją się naprawdę.
 
 Mamy trzy warstwy ochrony:
-1. **Sandbox** — izolacja srodowiska na poziomie OS
-2. **Permissions** — biala lista i czarna lista co agent moze wykonywac
-3. **Settings** — plik konfiguracyjny ktory wszystko spinksuje
+1. **Sandbox** — izolacja środowiska na poziomie OS
+2. **Permissions** — biała lista i czarna lista co agent może wykonywać
+3. **Settings** — plik konfiguracyjny który wszystko łączy
 
-I nie, WSL sam w sobie nie jest sandboxem — to jest czesty mit. WSL to narzedzie do uruchamiania linuxowych programow na Windows. Izolacja to osobny temat."
+I nie, WSL sam w sobie nie jest sandboxem — to jest częsty mit. WSL to narzędzie do uruchamiania linuxowych programow na Windows. Izolacja to osobny temat."
 
-📺 **CO POKAZUJE:**
-- Plik settings.json z przykladowymi permissions (z materials course)
-- Wyjasniam kazda sekcje
+📺 **CO POKAZUJĘ:**
+- Plik settings.json z przykładowymi permissions (z materials course)
+- Wyjaśniam każdą sekcję
 
 💬 WKLEJ NA CHAT:
 ```text
 Gdzie jest plik settings.json:
 
-• Lokalny (projekt):  .claude/settings.json  ← najwyzszy priorytet!
+• Lokalny (projekt):  .claude/settings.json  ← najwyższy priorytet!
 • Globalny (user):    ~/.claude/settings.json
 • Windows global:     %APPDATA%\Claude\settings.json
 • macOS global:       ~/Library/Application Support/Claude/settings.json
 
-Priorytety (od najwyzszego do najnizszego):
+Priorytety (od najwyzszego do najniższego):
 1. .claude/settings.json  (w katalogu projektu)
-2. ~/.claude/settings.json (uzytkownika)
-3. Domyslne ustawienia Claude Code
+2. ~/.claude/settings.json (użytkownika)
+3. Domyślne ustawienia Claude Code
 
 Docs: https://code.claude.com/docs/en/permissions
 ```
@@ -150,34 +150,34 @@ Docs: https://code.claude.com/docs/en/permissions
 
 🎬 **SANDBOX — SZCZEGOLY:**
 
-„Teraz sandbox. Zalez od tego czego uzywasz i na czym pracujesz.
+„Teraz sandbox. Zależ od tego, czego używasz i na czym pracujesz.
 
 **Windows bez WSL2**: AppContainer — ogranicza siec i filesystem, ale agent ma potencjalny dostep do plikow poza projektem. Nie jest pelna izolacja.
 
-**Windows + WSL2**: mozecie uzyc bwrap (bubblewrap) — linux namespace isolation. Uruchom `claude --sandbox`. Znacznie lepsza izolacja.
+**Windows + WSL2**: możecie uzyc bwrap (bubblewrap) — linux namespace isolation. Uruchom `claude --sandbox`. Znacznie lepsza izolacja.
 
-**Claude Code Desktop App na Windows Pro/Enterprise**: Hyper-V VM — pełna izolacja. ALE wymaga Windows Pro lub Enterprise — na Home nie dziala!
+**Claude Code Desktop App na Windows Pro/Enterprise**: Hyper-V VM — pełna izolacja. ALE wymaga Windows Pro lub Enterprise — na Home nie działa!
 
-**macOS**: Claude Code uzywa `sandbox-exec` — wbudowane, automatyczne.
+**macOS**: Claude Code używa `sandbox-exec` — wbudowane, automatyczne.
 
-**--dangerously-skip-permissions** — to jest nuklearny przycisk. I jak kazdy przycisk nuklearny — jest po cos, ale uzywamy go swiadomie."
+**--dangerously-skip-permissions** — to jest nuklearny przycisk. I jak każdy przycisk nuklearny — jest po coś, ale używamy go świadomie."
 
 💬 WKLEJ NA CHAT:
 ```text
 --dangerously-skip-permissions — kiedy TAK a kiedy NIE:
 
 ❌ NIGDY gdy:
-• Twoj glowny laptop z dostepem do produkcji
+• Twój glowny laptop z dostepem do produkcji
 • W katalogu jest .env z kluczami produkcyjnymi
 • Repo ma push access do main/master
 • Srodowisko bankowe / RODO-wrazliwe dane
-• Nie wiesz co robia Twoje skrypty startowe
+• Nie wiesz co robią Twoje skrypty startowe
 
 ✅ OK gdy:
 • Dedykowany izolowany kontener Docker
 • VM bez wrazliwych danych (np. stary laptop-sandbox)
 • CI/CD w dedykowanym, izolowanym srodowisku
-• Testowanie nowego narzedzia w throwaway repo
+• Testowanie nowego narzędzia w throwaway repo
 
 Artykul: https://www.ksred.com/claude-code-dangerously-skip-permissions-when-to-use-it-and-when-you-absolutely-shouldnt/
 Sandboxing docs: https://code.claude.com/docs/en/sandboxing
@@ -186,9 +186,9 @@ Permissions docs: https://code.claude.com/docs/en/permissions
 
 🎬 **DOCKER SANDBOX (eksperymentalne):**
 
-„Dla tych ktorzy chca najwyzszy poziom bezpieczenstwa w CI/CD — Docker AI Sandboxes. To eksperymentalna funkcja od Dockera.
+„Dla tych ktorzy chca najwyższy poziom bezpieczeństwa w CI/CD — Docker AI Sandboxes. To eksperymentalna funkcja od Dockera.
 
-Kluczowy feature: **credential injection** — kontener dostaje tylko te klucze API ktorych potrzebuje, bez dostepu do credentiali z hosta. Agent dziala izolowany, dostaje swoje narzedzia i dane, i nie widzi nic poza swoim sandboxem."
+Kluczowy feature: **credential injection** — kontener dostaje tylko te klucze API których potrzebuje, bez dostepu do credentiali z hosta. Agent działa izolowany, dostaje swoje narzędzia i dane, i nie widzi nic poza swoim sandboxem."
 
 💬 WKLEJ NA CHAT:
 ```text
@@ -196,43 +196,43 @@ Docker AI Sandboxes (eksperymentalne, dobre na CI/CD):
 https://docs.docker.com/ai/sandboxes/architecture/#credential-injection
 
 Idea:
-• Agent dziala w pelni izolowanym kontenerze Docker
-• Credential injection: agent dostaje TYLKO klucze ktorych potrzebuje
+• Agent działa w pelni izolowanym kontenerze Docker
+• Credential injection: agent dostaje TYLKO klucze których potrzebuje
 • Zero dostepu do credentiali hosta
-• Dobre dla: agenty autonomiczne, CI/CD, produkcyjne srodowiska
+• Dobre dla: agenty autonomiczne, CI/CD, produkcyjne środowiska
 
 Kiedy rozwazyc:
-• Masz agent w CI ktory ma dostep do API keys
+• Masz agent w CI który ma dostep do API keys
 • Chcesz --dangerously-skip-permissions ALE bezpiecznie
 • Agenty workload bez nadzoru czlowieka
 ```
 
-🏋️ **CWICZENIE (8 min):**
+🏋️ **ĆWICZENIE (8 min):**
 
 💬 WKLEJ NA CHAT:
 ```text
-Cwiczenie — Permissions setup:
+Ćwiczenie — Permissions setup:
 
 1. W katalogu projektu stworzcie: .claude/settings.json
-   (skopiujcie przykladowy JSON z chatu powyzej)
+   (skopiujcie przykładowy JSON z chatu powyżej)
 
 2. Uruchomcie claude w tym katalogu i sprawdzcie:
-   /doctor         ← diagnostyka srodowiska i permissions
-   /permissions    ← lista aktywnych uprawnien (jesli komenda dostepna)
+   /doctor         ← diagnostyka środowiska i permissions
+   /permissions    ← lista aktywnych uprawnien (jeśli komenda dostepna)
 
-3. Test: sprobujcie wydac polecenie ktore jest w deny:
+3. Test: sprobujcie wydac polecenie które jest w deny:
    "Wykonaj polecenie: rm -rf node_modules"
-   — co sie dzieje? Dostajecie pytanie o zgode? Odmowe?
+   — co się dzieje? Dostajecie pytanie o zgodę? Odmowe?
 
 4. Bonus: zapytajcie agenta:
-   "Wymien dokladnie jakie masz teraz uprawnienia i czego nie mozesz robic."
+   "Wymien dokladnie jakie masz teraz uprawnienia i czego nie mozesz robić."
 
-Wyniki: 👍 dziala / 🐛 problem
+Wyniki: 👍 działa / 🐛 problem
 ```
 
-🎬 **DOMKNIECIE:**
+🎬 **DOMKNIĘCIE:**
 
-„Zapamiętajcie jedno zdanie: **permissions to umowa z agentem, ktora mowi mu co wolno a czego nie — i chroni Was przed bledami obu stron**. Nie jest to ograniczenie AI. To jest dojrzala inzynieria.
+„Zapamiętajcie jedno zdanie: **permissions to umowa z agentem, która mowi mu co wolno a czego nie — i chroni Was przed bledami obu stron**. Nie jest to ograniczenie AI. To jest dojrzala inzynieria.
 
 I jeszcze jedno: settings.json w projekcie nadpisuje globalny. Czyli możecie mieć liberalne ustawienia globalne do eksperymentów, i restrykcyjne na poziomie projektu produkcyjnego. Separacja 100%."
 
@@ -241,19 +241,19 @@ I jeszcze jedno: settings.json w projekcie nadpisuje globalny. Czyli możecie mi
 ## 09:50–10:25 — IntelliJ: stara integracja vs ACP + IntelliJ MCP Server
 ⏱️ 35 min
 
-🎬 **CO MOWIE:**
+🎬 **CO MÓWIĘ:**
 
-„Teraz IntelliJ. Jesli pracujecie glownie w IntelliJ — a zakladam ze wiekszosc z Was tak — to ten blok jest bezposrednio przydatny.
+„Teraz IntelliJ. Jeśli pracujecie glownie w IntelliJ — a zakladam że wiekszosc z Was tak — to ten blok jest bezpośrednio przydatny.
 
-Mam do pokazania dwie integracje. I chce zeby rozumieli roznice, bo ma to praktyczne znaczenie dla codziennego workflow.
+Mam do pokazania dwie integracje. I chce żeby rozumieli roznice, bo ma to praktyczne znaczenie dla codziennego workflow.
 
-Historia jest krotka: JetBrains mial przez jakis czas wlasna implementacje AI Assistanta opartana na Claude SDK od Anthropic. Działało, ale mialo haczyki. Po pierwsze — uzywalo Waszych kredytow JetBrains AI, a nie subskrypcji Claude Code Teams. Po drugie — to nie byl pelny Claude Code agent. Brakowalo mu wielu funkcji: no MCP, brak wspolnej sesji z CLI, brak tych samych konfigow.
+Historia jest krótka: JetBrains miał przez jakiś czas własną implementację AI Assistanta opartana na Claude SDK od Anthropic. Działało, ale mialo haczyki. Po pierwsze — używało Waszych kredytów JetBrains AI, a nie subskrypcji Claude Code Teams. Po drugie — to nie był pełny Claude Code agent. Brakowało mu wielu funkcji: no MCP, brak wspólnej sesji z CLI, brak tych samych configów.
 
-Potem JetBrains i Zed stworzyli ACP — Agent Client Protocol — otwarty standard, taki jak LSP ale dla agentow AI. I teraz Claude Code CLI moze pracowac bezposrednio wewnatrz IntelliJ GUI. Ta sama sesja, ta sama historia, ten sam CLAUDE.md, te same MCP serwery.
+Potem JetBrains i Zed stworzyli ACP — Agent Client Protocol — otwarty standard, taki jak LSP ale dla agentów AI. I teraz Claude Code CLI może pracowac bezpośrednio wewnatrz IntelliJ GUI. Ta sama sesja, ta sama historia, ten sam CLAUDE.md, te same MCP serwery.
 
 Jeden agent, dwa interfejsy. Terminal i IDE — zsynchornizowane."
 
-📺 **CO POKAZUJE:**
+📺 **CO POKAZUJĘ:**
 - IntelliJ AI Chat panel
 - Dropdown przy nazwie modelu
 - ACP Registry
@@ -271,7 +271,7 @@ STARA (JetBrains AI Assistant z Anthropic SDK):
 
 NOWA (ACP Registry — rekomendowana):
 ✅ Uzywa Waszej subskrypcji Claude Code Teams
-✅ Pelne funkcje = dokladnie to samo co CLI
+✅ Pełne funkcje = dokładnie to samo co CLI
 ✅ Wspolna sesja, historia, configs z CLI
 ✅ Czyta ten sam CLAUDE.md co terminal
 ✅ Ten sam zestaw MCP serwerow
@@ -284,26 +284,26 @@ AI Chat → dropdown (przy nazwie modelu) →
 
 🎬 **INTELLIJ MCP SERVER:**
 
-„A teraz opcja 'Pass IntelliJ MCP server' — co ona robi i dlaczego warto ja wlaczyc.
+„A teraz opcja 'Pass IntelliJ MCP server' — co ona robi i dlaczego warto ją włączyć.
 
-MCP — Model Context Protocol — to standard ktory pozwala agentom uzyc zewnetrznych narzedzi. IntelliJ MCP Server to serwer ktory wystawia narzedzia IntelliJ dla agenta.
+MCP — Model Context Protocol — to standard który pozwala agentom uzyc zewnętrznych narzędzi. IntelliJ MCP Server to serwer który wystawia narzędzia IntelliJ dla agenta.
 
-Kiedy wlaczysz te opcje, agent dostaje cos wiecej niz tylko pliki z dysku. Dostaje:
-- diagnostyke IDE — bledy kompilacji, warningi, inspekcje ktore IntelliJ widzi
+Kiedy włączysz te opcje, agent dostaje coś więcej niz tylko pliki z dysku. Dostaje:
+- diagnostykę IDE — błędy kompilacji, warningi, inspekcje które IntelliJ widzi
 - kontekst aktualnie otwartego pliku
-- nawigacje przez strukture projektu jak IDE to rozumie
-- refaktoryng przez IDE (nie tylko przez edycje tekstu)
+- nawigacje przez strukturę projektu jak IDE to rozumie
+- refaktoring przez IDE (nie tylko przez edycje tekstu)
 
-To jest duzo lepszy kontekst. Agent nie 'czyta plik jak grep', tylko 'rozumie projekt jak developer w IntelliJ'."
+To jest dużo lepszy kontekst. Agent nie 'czyta plik jak grep', tylko 'rozumie projekt jak developer w IntelliJ'."
 
 💬 WKLEJ NA CHAT:
 ```text
 IntelliJ MCP Server — co daje agentowi:
 
-✅ Diagnostyka IDE (bledy kompilacji, warningi, code inspections)
+✅ Diagnostyka IDE (błędy kompilacji, warningi, code inspections)
 ✅ Kontekst aktualnie otwartego pliku i projektu
 ✅ Nawigacja jak Java-aware IDE (nie tylko grep po plikach)
-✅ Znajomosc run configurations, modulu, zaleznoci
+✅ Znajomość run configurations, modułów, zależności
 
 Jak wlaczyc:
 Przy instalacji ACP → zaznacz: ✅ "Pass IntelliJ MCP server"
@@ -325,14 +325,14 @@ JetBrains ACP blog: https://blog.jetbrains.com/ai/2026/01/acp-agent-registry/
 Introducing Claude Agent: https://blog.jetbrains.com/ai/2025/09/introducing-claude-agent-in-jetbrains-ides/
 ```
 
-🏋️ **CWICZENIE (12 min):**
+🏋️ **ĆWICZENIE (12 min):**
 
 💬 WKLEJ NA CHAT:
 ```text
-Cwiczenie — ACP w IntelliJ:
+Ćwiczenie — ACP w IntelliJ:
 
 1. Sprawdzcie wersje IntelliJ: Help → About (potrzeba 2025.3+)
-   Jesli nizsza — pozostancie przy CLI, to jest OK.
+   Jeśli nizsza — pozostancie przy CLI, to jest OK.
 
 2. AI Chat → dropdown → "Install From ACP Registry" → "Claude Code"
    Zaznaczcie: ✅ "Pass IntelliJ MCP server"
@@ -340,11 +340,11 @@ Cwiczenie — ACP w IntelliJ:
 3. W AI Chat wklejcie:
    "Jestem nowym developerem w tym projekcie.
     Przejrzyj strukture i odpowiedz:
-    1) Co to jest za aplikacja i jaki problem rozwiazuje?
+    1) Co to jest za aplikacja i jaki problem rozwiązuje?
     2) Jaki stack technologiczny?
-    3) Jakie sa glowne klasy/komponenty?
+    3) Jakie są główne klasy/komponenty?
     4) Co jest core domain — gdzie jest serce logiki biznesowej?
-    5) Co wedlug Ciebie jest najpilniejsze do zrobienia?
+    5) Co według Ciebie jest najpilniejsze do zrobienia?
     Odpowiedz zwiezle w punktach."
 
 4. Porownajcie z tym samym pytaniem w CLI — czy IDE context robi roznice?
@@ -352,39 +352,39 @@ Cwiczenie — ACP w IntelliJ:
 Wyniki: 👍 / 🐛
 ```
 
-💡 **Uwaga:** Kto ma IntelliJ ponizej 2025.3 — niech robi cwiczenie w CLI. ACP jako 🔵 homework.
+💡 **Uwaga:** Kto ma IntelliJ poniżej 2025.3 — niech robi ćwiczenie w CLI. ACP jako 🔵 homework.
 
-🎬 **PO CWICZENIU:**
+🎬 **PO ĆWICZENIU:**
 
-„Jedna wazna roznica ktora pewnie zauwazyliscie: z IDE MCP agent zna bledy kompilacji, zalez i kontekst ktory IntelliJ rozumie jako Java-aware IDE. To nie jest po prostu 'czytanie plikow'. To jest praca z Waszym projektem tak jak senior developer ktory zna projekt.
+„Jedna ważna różnica która pewnie zauwazyliscie: z IDE MCP agent zna błędy kompilacji, zalez i kontekst który IntelliJ rozumie jako Java-aware IDE. To nie jest po prostu 'czytanie plikow'. To jest praca z Waszym projektem tak jak senior developer który zna projekt.
 
-Jesli jutro bede prowadzic agenta przez kodowanie — bede uzywac glownie ACP w IntelliJ wlasnie dlatego."
+Jeśli jutro będę prowadzić agenta przez kodowanie — będę używać głównie ACP w IntelliJ właśnie dlatego."
 
 ---
 
 ## 10:25–10:55 — Claude Code: komendy i funkcje
 ⏱️ 30 min
 
-🎬 **CO MOWIE:**
+🎬 **CO MÓWIĘ:**
 
-„Ostatni blok przed przerwa — komendy i funkcje Claude Code ktore oszczedzaja czas i sa malo znane.
+„Ostatni blok przed przerwa — komendy i funkcje Claude Code które oszczedzaja czas i są mało znane.
 
 Zacznijmy od mojego ulubionego: Ctrl+G."
 
-📺 **CO POKAZUJE:**
-- Demo Ctrl+G (otwieram zewnetrzny edytor z promptu)
-- Demo /loop, /batch w skrocie
+📺 **CO POKAZUJĘ:**
+- Demo Ctrl+G (otwieram zewnętrzny edytor z promptu)
+- Demo /loop, /batch w skrócie
 - Lista komend /help
 
 🎬 **CTRL+G — $EDITOR:**
 
-„Ctrl+G otwiera biezacy prompt lub konwersacje w Waszym zewnetrznym edytorze. Ustawiacie $EDITOR na Zed, IntelliJ, VSCode, Cursor — i zamiast pisac w terminalu, macie pelny edytor z podswietlaniem, zawijaniem linii, wszystkim.
+„Ctrl+G otwiera bieżący prompt lub konwersacje w Waszym zewnętrznym edytorze. Ustawiacie $EDITOR na Zed, IntelliJ, VSCode, Cursor — i zamiast pisac w terminalu, macie pełny edytor z podswietlaniem, zawijaniem linii, wszystkim.
 
-Idealny kiedy piszecie dlugi, zlozony prompt — albo kiedy chcecie zedytowac duzy blok kodu przed przekazaniem do agenta. Bez tego Shift+Enter w Windows Terminal staje sie meczeninstwem."
+Idealny kiedy piszecie długi, złożony prompt — albo kiedy chcecie zedytowac duzy blok kodu przed przekazaniem do agenta. Bez tego Shift+Enter w Windows Terminal staje się meczeninstwem."
 
 💬 WKLEJ NA CHAT:
 ```text
-Ctrl+G — otworz prompt w zewnetrznym edytorze:
+Ctrl+G — otworz prompt w zewnętrznym edytorze:
 
 Ustaw $EDITOR w .bashrc / .zshrc / .profile:
 export EDITOR="zed --wait"         # Zed
@@ -394,16 +394,16 @@ export EDITOR="cursor --wait"      # Cursor
 
 Uzycie:
 • W Claude Code CLI: Ctrl+G
-• Otwiera biezacy prompt w edytorze
+• Otwiera bieżący prompt w edytorze
 • Piszesz / edytujesz / zapisujesz → wracasz do CC
-• Idealne dla: dlugich promptow, edycji kodu, zlozonych promptow systemowych
+• Idealne dla: długich promptów, edycji kodu, złożonych promptów systemowych
 
-Sprawdz czy dziala: echo $EDITOR
+Sprawdź czy działa: echo $EDITOR
 ```
 
 🎬 **KOMENDY /loop, /batch, /schedule:**
 
-„Teraz nowe komendy ktore zmieniaja prace z dluzszymi zadaniami. To sa swieze funkcje — nie sa wszedzie dobrze udokumentowane — ale sa bardzo uzyteczne."
+„Teraz nowe komendy które zmieniają prace z dłuższymi zadaniami. To są swieze funkcje — nie są wszedzie dobrze udokumentowane — ale są bardzo użyteczne."
 
 💬 WKLEJ NA CHAT:
 ```text
@@ -427,26 +427,26 @@ Nowe komendy Claude Code (2025/2026):
 
 /review
    Code review biezacego brancha (diff vs main).
-   Szuka: bledy, security, pokrycie testami, konwencje.
+   Szuka: błędy, security, pokrycie testami, konwencje.
 
 /init
    Inicjalizuje CLAUDE.md — pyta o projekt, stack, zasady.
    Dobry punkt startowy dla nowego projektu.
 
 /doctor
-   Diagnostyka srodowiska: konfiguracja, permissions, MCP servers.
-   Uzywaj gdy cos nie dziala.
+   Diagnostyka środowiska: konfiguracja, permissions, MCP servers.
+   Używaj gdy coś nie działa.
 
 /cośt
    Ile tokenow i $$$ wydales w tej sesji.
-   Uzywaj gdy boisz sie rachunku ;)
+   Używaj gdy boisz się rachunku ;)
 ```
 
 💬 WKLEJ NA CHAT:
 ```text
 Inne przydatne rzeczy w Claude Code:
 
-# Kilka sesji rownoleganie (git worktrees — bardzo potezne!):
+# Kilka sesji równolegle (git worktrees — bardzo potezne!):
 git worktree add ../feature-sinsay-ui feature/sinsay-ui
 cd ../feature-sinsay-ui && claude   # osobna sesja na osobnym branchu!
 # Kazda sesja = osobny kontekst, osobna historia, te same configs
@@ -459,28 +459,28 @@ claude --no-interactive "Run tests, summarize failures as JSON"
 
 # Zmiana modelu w sesji:
 /model                              # pokaz dostepne modele
-/model claude-opus-4-6              # przelacz na Opus (trudne decyzje arch.)
-/model claude-haiku-4-5             # przelacz na Haiku (szybkie proste taski)
+/model claude-opus-4-6              # przełącz na Opus (trudne decyzje arch.)
+/model claude-haiku-4-5             # przełącz na Haiku (szybkie proste taski)
 
 # Kompresja gdy sesja jest bardzo dluga:
 /compact                            # kompresuj historie, zachowaj wyniki
 ```
 
-🏋️ **MINI-CWICZENIE (5 min):**
+🏋️ **MINI-ĆWICZENIE (5 min):**
 
 💬 WKLEJ NA CHAT:
 ```text
-Mini-cwiczenie:
+Mini-ćwiczenie:
 Uruchomcie claude i sprawdzcie:
 
-/help          ← pelna lista komend
-/doctor        ← diagnostyka srodowiska
-/cost          ← ile kosztowala ta sesja (pewnie 0 :))
+/help          ← pełna lista komend
+/doctor        ← diagnostyka środowiska
+/cost          ← ile kosztowała ta sesja (pewnie 0 :))
 
 Opcjonalnie — ustawcie EDITOR i sprawdzcie Ctrl+G:
 export EDITOR="code --wait"
 # lub: export EDITOR="idea --wait"
-# Potem w claude: Ctrl+G → edytor sie otwiera
+# Potem w claude: Ctrl+G → edytor się otwiera
 
 Kciuki gdy gotowe 👍
 ```
@@ -494,8 +494,8 @@ Kciuki gdy gotowe 👍
 ```text
 ☕ Przerwa 15 min → wracamy 11:10
 
-Po przerwie zaczynamy wlasciwy Dzien 2:
-AI jako Twoj Product Manager.
+Po przerwie zaczynamy wlasciwy Dzień 2:
+AI jako Twój Product Manager.
 
 Przypomnijcie sobie projekt: chatbot Sinsay do reklamacji i zwrotów.
 Będę prosił o aktywna prace — będziesz odpowiadał na pytania agenta
@@ -507,19 +507,19 @@ i krytykował wygenerowane dokumenty.
 ## 11:10–12:15 — Moduł 2.1: AI jako Twój PM — PRD, User Stories, Requirements
 ⏱️ 65 min
 
-🎬 **CO MOWIE:**
+🎬 **CO MÓWIĘ:**
 
-„Zaczynamy wlasciwy Dzien 2. I zaczynamy od pytania, ktore moze byc niewygodne:
+„Zaczynamy wlasciwy Dzień 2. I zaczynamy od pytania, które może być niewygodne:
 
-Ile razy zdarzylo sie Wam zacząc kodowac, a po tygodniu okazalo sie ze rozwiazywaliscie nie ten problem? Albo ze developer i PM mieli dwie rozne wizje tego samego zadania?
+Ile razy zdarzylo się Wam zacząc kodowac, a po tygodniu okazalo się że rozwiazywaliscie nie ten problem? Albo że developer i PM mieli dwie rozne wizje tego samego zadania?
 
-AI moze tu pomoc — nie dlatego ze jest madrzejsze od ludzi — ale dlatego ze zadaje irytujaco dobre pytania. Bez wstydu. Bez 'to chyba oczywiste, nie bede pytal'. Bez politycznej gry o to kto powiedzial co na jakim meetingu.
+AI może tu pomoc — nie dlatego że jest madrzejsze od ludzi — ale dlatego że zadaje irytujaco dobre pytania. Bez wstydu. Bez 'to chyba oczywiste, nie bede pytal'. Bez politycznej gry o to kto powiedzial co na jakim meetingu.
 
 Pokaze Wam teraz technikę którą nazywam 'interrogation mode' — zamiast od razu prosic o PRD, najpierw kazemy agentowi zadawac nam pytania. Agent jako PM.
 
-To jest rowniez bardzo dobra technika dlatego, ze czesto **sami nie wiemy czego chcemy, dopoki ktos nas nie zapyta**. Przekonacie sie za chwile."
+To jest rowniez bardzo dobra technika dlatego, że czesto **sami nie wiemy czego chcemy, dopoki ktos nas nie zapyta**. Przekonacie się za chwile."
 
-📺 **CO POKAZUJE:**
+📺 **CO POKAZUJĘ:**
 - Uruchamiam Claude Code
 - Wklejam Prompt 1 — agent zadaje pytania jedno po jednym
 
@@ -527,20 +527,20 @@ To jest rowniez bardzo dobra technika dlatego, ze czesto **sami nie wiemy czego 
 
 „Widzieliscie to? Agent nie wygenerował od razu dokumentu. Zadal pytanie. I czeka. Takie mamy polecenie: 'pytaj o jedno na raz'.
 
-Ta technika jest tez dobra do onboardingu nowych czlonkow zespolu, do retrospektyw, do design sessions. Wszedie tam gdzie chcemy wyciagnac z ludzi wiedze ktora jest w glowach ale nie na papierze."
+Ta technika jest tez dobra do onboardingu nowych czlonkow zespolu, do retrospektyw, do design sessions. Wszedie tam gdzie chcemy wyciagnac z ludzi wiedze która jest w glowach ale nie na papierze."
 
 💬 WKLEJ NA CHAT:
 ```text
-Prompt 1 — AI jako PM: tryb pytan (interrogation mode)
+Prompt 1 — AI jako PM: tryb pytań (interrogation mode)
 
-Jestes doswiadczonym product managerem pracujacym dla Sinsay —
+Jesteś doświadczonym product managerem pracujacym dla Sinsay —
 modowego eCommerce sprzedajacego ubrania (fast fashion, mloda grupa docelowa).
 
-Musimy zbudowac chatbota do obslugi reklamacji i zwrotow produktow.
-Zanim napiszesz jakikolwiek dokument, zadaj mi 10 konkretnych pytan
-ktore pomoga Ci lepiej zrozumiec wymagania.
+Musimy zbudować chatbota do obsługi reklamacji i zwrotów produktów.
+Zanim napiszesz jakikolwiek dokument, zadaj mi 10 konkretnych pytań
+które pomoga Ci lepiej zrozumiec wymagania.
 
-Zasady zadawania pytan:
+Zasady zadawania pytań:
 - Pytaj o JEDNO na raz i czekaj na odpowiedz
 - Pytaj o to czego nie wiesz — nie zgaduj
 - Pytaj o edge cases i sytuacje wyjatkowe
@@ -554,29 +554,29 @@ Pisz po polsku.
 
 🎬 **W TRAKCIE CWICZENIA:**
 
-„Odpowiadajcie szczerze i konkretnie. Jesli nie wiecie odpowiedzi — powiedzcie 'nie wiem' albo 'TBD'. To tez jest dobra odpowiedz dla PRD.
+„Odpowiadajcie szczerze i konkretnie. Jeśli nie wiecie odpowiedzi — powiedzcie 'nie wiem' albo 'TBD'. To tez jest dobra odpowiedź dla PRD.
 
-Zauwazcje ze agent pyta o rzeczy ktore na pierwszy rzut oka wydaja sie oczywiste: 'co sie dzieje ze zdjeciem po decyzji?' albo 'jak dlugo przechowujemy dane sesji?' — To sa te rzeczy ktore pozniej okazuja sie blokerami w implementacji."
+Zauważcie że agent pyta o rzeczy które na pierwszy rzut oka wydają się oczywiste: 'co się dzieje ze zdjęciem po decyzji?' albo 'jak długo przechowujemy dane sesji?' — To są te rzeczy które później okazują się blokerami w implementacji."
 
-🏋️ **CWICZENIE 1 — Generowanie PRD (25 min):**
+🏋️ **ĆWICZENIE 1 — Generowanie PRD (25 min):**
 
 💬 WKLEJ NA CHAT:
 ```text
-Cwiczenie 1: PRD z pomoca agenta
+Ćwiczenie 1: PRD z pomocą agenta
 
 Krok 1 — Interrogation mode (12 min):
-Wklejcie Prompt 1 powyzej.
+Wklejcie Prompt 1 powyżej.
 Odpowiedzcie na pytania agenta zgodnie z Wasza wizja projektu.
 Mozecie dostosowac projekt do Waszego kontekstu.
 
 Krok 2 — Wygeneruj PRD (10 min):
-Po odpowiedzeniu na pytania wklejcie Prompt 2 (ponizej).
+Po odpowiedzeniu na pytania wklejcie Prompt 2 (poniżej).
 
 Krok 3 — Krytyka (3 min):
 Przeczytajcie dokument. Znajdzcie:
 • 1 brakujaca user story
-• 1 acceptance criteria ktore NIE jest mierzalne (poprawcie!)
-• 1 rzecz ktora jest zbyt ogolna
+• 1 acceptance criteria które NIE jest mierzalne (poprawcie!)
+• 1 rzecz która jest zbyt ogolna
 
 Wynik wrzuccie na chat: 1 zdanie co Was zaskoczylo w pytaniach agenta.
 ```
@@ -592,27 +592,27 @@ Format:
 ## 1. Executive Summary (2-3 zdania)
 ## 2. Problem Statement
 ## 3. Uzytkownicyi / Persony (2-3 konkretne persony)
-## 4. Glowny Flow (krok po kroku, dla kazdego glownego scenariusza)
+## 4. Główny Flow (krok po kroku, dla każdego głównego scenariusza)
 ## 5. User Stories
-   Format: "Jako [kto], chce [co], zeby [dlaczego]"
-   Minimum 8 user stories, uwzgledniajac happy path i bledy
+   Format: "Jako [kto], chcę [co], żeby [dlaczego]"
+   Minimum 8 user stories, uwzgledniajac happy path i błędy
 ## 6. Acceptance Criteria
-   Mierzalne i konkretne — nie "uzytkownik bedzie zadowolony"
+   Mierzalne i konkretne — nie "uzytkownik będzie zadowolony"
 ## 7. Out of Scope
-   Co NIE wchodzi w MVP — rownie wazne jak scope!
+   Co NIE wchodzi w MVP — równie ważne jak scope!
 ## 8. Ograniczenia techniczne i biznesowe
 ## 9. Metryki sukcesu MVP (liczby, nie opisy)
 
 Pisz po polsku. Konkretnie. Bez marketingowego lania wody.
-PRD ma byc uzyteczny dla developera i agenta — nie do prezentacji.
+PRD ma być uzyteczny dla developera i agenta — nie do prezentacji.
 Zapisz wynik jako docs/PRD.md
 ```
 
-🎬 **DOMKNIECIE MODULU 2.1:**
+🎬 **DOMKNIĘCIE MODULU 2.1:**
 
-„Dobry PRD to dokument ktory redukuje entropy. Kiedy jutro agent bedzie pisal kod — nie bedzie zgadywal. Bedzie budowal z planem. Ale — i to jest wazne — PRD nie jest wieczny. To zywy dokument. Aktualizujcie go po kazdym sprincie przez rozmowe z agentem.
+„Dobry PRD to dokument który redukuje entropy. Kiedy jutro agent będzie pisał kod — nie będzie zgadywał. Będzie budował z planem. Ale — i to jest ważne — PRD nie jest wieczny. To żywy dokument. Aktualizujcie go po każdym sprincie przez rozmowę z agentem.
 
-Jeden quick tip: zawsze trzymajcie PRD w repozytorium, w `docs/PRD.md`. Agent czyta go automatycznie jesli jest w projekcie i opisany w CLAUDE.md."
+Jeden quick tip: zawsze trzymajcie PRD w repozytorium, w `docs/PRD.md`. Agent czyta go automatycznie jeśli jest w projekcie i opisany w CLAUDE.md."
 
 💬 WKLEJ NA CHAT:
 ```text
@@ -620,33 +620,33 @@ Dobry PRD dla agenta — checklist:
 
 □ Kazda user story ma JEDNO jasne acceptance criteria
 □ Out of scope jest tak samo konkretne jak scope
-□ Persony sa konkretne — nie "uzytkownik", ale "Kasia, 23 lata, zamawia przez telefon"
-□ Edge cases sa wymienione wprost, nie ukryte w tekscie
+□ Persony są konkretne — nie "uzytkownik", ale "Kasia, 23 lata, zamawia przez telefon"
+□ Edge cases są wymienione wprost, nie ukryte w tekscie
 □ Metryki sukcesu to liczby (np. "80% decyzji bez eskalacji do czlowieka")
-□ Dokument jest krotki — nie esej. Jesli > 3 strony: skroc
-□ Zapisany w repo: docs/PRD.md (agent bedzie go czytal)
+□ Dokument jest krotki — nie esej. Jeśli > 3 strony: skroc
+□ Zapisany w repo: docs/PRD.md (agent będzie go czytal)
 ```
 
 ---
 
-## 12:15–13:00 — Modul 2.2: Research + Tech Stack + ADR
+## 12:15–13:00 — Moduł 2.2: Research + Tech Stack + ADR
 ⏱️ 45 min
 
-🎬 **CO MOWIE:**
+🎬 **CO MÓWIĘ:**
 
-„Mamy PRD. Teraz musimy podjac kluczowa decyzje: co uzywamy do budowania.
+„Mamy PRD. Teraz musimy podjąć kluczowa decyzję: co używamy do budowania.
 
-I tu jest pulapka w ktora czesto wpadaja zespoly: wybieraja stack zanim naprawde rozumieja co im on daje. 'Uzyyjmy Spring AI bo jest cool' albo 'mamy juz Vercel w innym projekcie'. To sa decyzje na baze presji lub przyzwyczajenia, nie na bazie dobrze przeprowadzonego research.
+I tu jest pułapka w która często wpadają zespoly: wybierają stack zanim naprawdę rozumieją co im on daje. 'Użyjmy Spring AI bo jest cool' albo 'mamy już Vercel w innym projekcie'. To są decyzje na bazę presji lub przyzwyczajenia, nie na bazie dobrze przeprowadzonego research.
 
-Dzisiaj bedziemy robic research razem z agentem. I pokaze Wam narzedzie ktore bardzo to przyspiesza: Context7 MCP."
+Dzisiaj będziemy robić research razem z agentem. I pokaze Wam narzędzie które bardzo to przyspiesza: Context7 MCP."
 
-📺 **CO POKAZUJE:**
+📺 **CO POKAZUJĘ:**
 - Dodaje Context7 MCP do settings.json
 - Demo: agent pobiera dokumentacje Spring AI
 
 🎬 **CONTEXT7 MCP:**
 
-„Context7 to serwer MCP ktory pobiera aktualną dokumentacje bibliotek zamiast opierac sie na wiedzy modelu z treningu. To jest kluczowe bo — jak pewnie wiecie — modele maja cutoff date. Claude nie wie co sie zmienilo w Spring AI 3 miesiace temu. Context7 wie, bo pobiera wprost z dokumentacji."
+„Context7 to serwer MCP który pobiera aktualną dokumentację bibliotek zamiast opierać się na wiedzy modelu z treningu. To jest kluczowe bo — jak pewnie wiecie — modele mają cutoff date. Claude nie wie co się zmieniło w Spring AI 3 miesiące temu. Context7 wie, bo pobiera wprost z dokumentacji."
 
 💬 WKLEJ NA CHAT:
 ```text
@@ -665,7 +665,7 @@ Konfiguracja (dodaj do ~/.claude/settings.json lub .claude/settings.json):
   }
 }
 
-Weryfikacja: uruchom claude → /mcp → powinna byc widoczna "context7"
+Weryfikacja: uruchom claude → /mcp → powinna być widoczna "context7"
 
 Uzycie w prompcie:
 • Dodaj "use context7" lub "fetch docs for [library]"
@@ -675,26 +675,26 @@ Uzycie w prompcie:
 
 🎬 **TRZY SCIEZKI TECHNOLOGICZNE:**
 
-„Teraz — trzy sciezki dla projektu Sinsay. Mowilem o nich rano, ale teraz czas na decyzje. Kazda ma swoje pros i cons. Bede pokazywal sciezke bezpieczna na zywo. Srednio-zaawansowani — dam materialy. Zaawansowani — dam kierunek, ale droga jest Wasza."
+„Teraz — trzy sciezki dla projektu Sinsay. Mówiłem o nich rano, ale teraz czas na decyzję. Każda ma swoje pros i cons. Będę pokazywał ścieżkę bezpieczną na żywo. Średnio-zaawansowani — dam materiały. Zaawansowani — dam kierunek, ale droga jest Wasza."
 
 💬 WKLEJ NA CHAT:
 ```text
-Trzy sciezki technologiczne — wybierz swoja:
+Trzy ścieżki technologiczne — wybierz swoją:
 
-🟢 BEZPIECZNA (pokazuje na zywo):
+🟢 BEZPIECZNA (pokazuje na żywo):
 Backend:  Java 21 + Spring Boot 3.x + OpenAI Java SDK lub Spring AI
 Frontend: React + Vercel AI SDK lub AssistantUI components
 Baza:     SQLite (JDBC + Spring Data JPA z SQLite dialect)
-Zakres:   formularz → analiza zdjecia → decyzja → chat
+Zakres:   formularz → analiza zdjęcia → decyzja → chat
 
 🟡 SREDNIO-ZAAWANSOWANA (dam kierunek, reszta samodzielnie):
-Jak wyzej + prosta RAG:
+Jak wyżej + prosta RAG:
 • SQLite Vector Store (wbudowane w Spring AI)
-• lub ChromaDB jako zewnetrzny vector DB
-• Embeddingi dla dokumentow proceduralnych
-Kiedy: chcesz zeby agent szukal w procedurach, nie tylko w plikach MD
+• lub ChromaDB jako zewnętrzny vector DB
+• Embeddingi dla dokumentów proceduralnych
+Kiedy: chcesz żeby agent szukal w procedurach, nie tylko w plikach MD
 
-🔴 ZAAWANSOWANA (na wlasne ryzyko, bez prowadzenia przeze mnie):
+🔴 ZAAWANSOWANA (na własne ryzyko, bez prowadzenia przeze mnie):
 LangGraph4j + CopilotKit + AG-UI Protocol
 Agent kontroluje UI: wyswietla formularze dynamicznie,
 pre-filluje dane z rozmowy, pokazuje wyniki jako UI komponenty
@@ -707,9 +707,9 @@ Wasza decyzja — wrzuccie na chat: 🟢 / 🟡 / 🔴
 ```text
 Prompt — Research tech stack (wklej do Claude Code z context7):
 
-Jestes doswiadczonym architektem Java.
+Jesteś doświadczonym architektem Java.
 
-Projektuję chatbota do obslugi reklamacji i zwrotow produktow
+Projektuję chatbota do obsługi reklamacji i zwrotów produktów
 dla Sinsay (fashion eCommerce). Stack bazowy: Java 21 + Spring Boot 3.x.
 
 Przeprowadz research i porownaj:
@@ -723,9 +723,9 @@ Przeprowadz research i porownaj:
 3) SQLite (JDBC) vs H2 vs PostgreSQL
    — do przechowywania sesji i historii czatu w MVP
 
-4) Dwa osobne wywolania LLM (vision osobno, decision osobno)
-   vs jedno multimodalne wywolanie
-   — dla analizy zdjecia + decyzji o reklamacji
+4) Dwa osobne wywołania LLM (vision osobno, decision osobno)
+   vs jedno multimodalne wywołanie
+   — dla analizy zdjęcia + decyzji o reklamacji
 
 Dla kazdej opcji podaj:
 - Glowne zalety i wady w kontekscie tego projektu
@@ -738,23 +738,23 @@ Zakoncz rekomendacja dla MVP (small team, 3-4 tygodnie dev time).
 Uzywaj context7 do pobrania aktualnej dokumentacji bibliotek.
 ```
 
-🏋️ **CWICZENIE 2 — Research (15 min):**
+🏋️ **ĆWICZENIE 2 — Research (15 min):**
 
 💬 WKLEJ NA CHAT:
 ```text
-Cwiczenie 2: Research technologiczny
+Ćwiczenie 2: Research technologiczny
 
-1. Upewnijcie sie ze macie context7 MCP (jesli nie — zrobie demo)
+1. Upewnijcie się że macie context7 MCP (jeśli nie — zrobie demo)
 2. Wklejcie powyzszy research prompt
 3. Przeczytajcie rekomendacje krytycznie
 4. Zadajcie JEDEN follow-up — np:
-   "Pokaz przykladowy kod integracji Spring AI z GPT-4o w Javie"
-   "Jak dziala streaming w Vercel AI SDK?"
-   "Czy SQLite dziala z Spring Data JPA na produkcji?"
+   "Pokaz przykładowy kod integracji Spring AI z GPT-4o w Javie"
+   "Jak działa streaming w Vercel AI SDK?"
+   "Czy SQLite działa z Spring Data JPA na produkcji?"
 
-Zanotujcie decyzje — potrzebna do ADR po przerwie!
+Zanotujcie decyzję — potrzebna do ADR po przerwie!
 
-Na chat: jaka technologie wybralyscie i dlaczego 1 zdaniem
+Na chat: jaką technologię wybrałyście i dlaczego 1 zdaniem
 ```
 
 ---
@@ -768,31 +768,31 @@ Na chat: jaka technologie wybralyscie i dlaczego 1 zdaniem
 
 Po przerwie:
 • Diagramy UML — Mermaid (GitHub) i PlantUML (GitLab)
-• Dlaczego UML pomaga AI myslec strukturalnie (naprawde pomaga!)
-• ADR — zapisujemy decyzje architektoniczne
+• Dlaczego UML pomaga AI myslec strukturalnie (naprawdę pomaga!)
+• ADR — zapisujemy decyzję architektoniczne
 • Pozniej: MCP, Skills, Sub-agenci, CLAUDE.md
 
-Dobry moment zeby zapisac swoja decyzje o stacku — bedziecie jej potrzebowac do ADR po przerwie.
+Dobry moment żeby zapisać swoją decyzję o stacku — będziecie jej potrzebować do ADR po przerwie.
 ```
 
 ---
 
-## 13:30–14:30 — Modul 2.2 cd: UML — Mermaid, PlantUML, architektura
+## 13:30–14:30 — Moduł 2.2 cd: UML — Mermaid, PlantUML, architektura
 ⏱️ 60 min
 
-🎬 **CO MOWIE:**
+🎬 **CO MÓWIĘ:**
 
-„Wracamy. Teraz diagramy. Ale najpierw chce Wam powiedziec dlaczego to jest wazne z perspektywy pracy z AI — bo jest pewien efekt ktory jest nieoczywisty.
+„Wracamy. Teraz diagramy. Ale najpierw chcę Wam powiedzieć dlaczego to jest ważne z perspektywy pracy z AI — bo jest pewien efekt który jest nieoczywisty.
 
-Kiedy prosicie agenta o diagram, dzieje sie cos ciekawego: agent musi myslec strukturalnie. Zeby narysowac diagram sekwencji, musi zrozumiec przeplyw danych. Zeby narysowac diagram klas, musi zdecydowac o abstrakcjach. Zeby narysowac diagram komponentow, musi przemyslec granice odpowiedzialnosci.
+Kiedy prosicie agenta o diagram, dzieje się coś ciekawego: agent musi myslec strukturalnie. Zeby narysowac diagram sekwencji, musi zrozumiec przeplyw danych. Zeby narysowac diagram klas, musi zdecydowac o abstrakcjach. Zeby narysowac diagram komponentow, musi przemyslec granice odpowiedzialności.
 
-Innymi slowy: **prosac agenta o diagram, wymusamy na nim myslenie architektoniczne**. To jest jeden z moich ulubionych tricksow — jesli nie jestem pewien czy agent dobrze rozumie co ma zbudowac, prosze go najpierw o diagram. Jesli diagram jest sensowny — kod bedzie sensowny. Jesli diagram jest chaotyczny — lepiej to zobaczec *przed* kodowaniem niz po.
+Innymi słowy: **prosząc agenta o diagram, wymuszamy na nim myślenie architektoniczne**. To jest jeden z moich ulubionych tricksów — jeśli nie jestem pewien czy agent dobrze rozumie co ma zbudowac, proszę go najpierw o diagram. Jeśli diagram jest sensowny — kod będzie sensowny. Jeśli diagram jest chaotyczny — lepiej to zobaczyć *przed* kodowaniem niż po.
 
-To dziala rowniez jako narzedzie do walidacji Waszego wlasnego rozumienia domeny. Jesli agent rysuje sekwencje i wy nie rozumiecie jednego kroku — to jest sygnalizacja ze to miejsce wymaga doprecyzowania.
+To działa rowniez jako narzędzie do walidacji Waszego wlasnego rozumienia domeny. Jeśli agent rysuje sekwencje i wy nie rozumiecie jednego kroku — to jest sygnalizacja że to miejsce wymaga doprecyzowania.
 
-A teraz szczegoly techniczne: dwa formaty ktore bedziemy uzywac."
+A teraz szczegóły techniczne: dwa formaty które będziemy używać."
 
-📺 **CO POKAZUJE:**
+📺 **CO POKAZUJĘ:**
 - Generuje diagram Mermaid w claude
 - Wkleja do pliku MD
 - Pokazuje rendering na GitHub
@@ -801,9 +801,9 @@ A teraz szczegoly techniczne: dwa formaty ktore bedziemy uzywac."
 
 🎬 **MERMAID vs PlantUML:**
 
-„Mermaid — natywnie renderuje sie na GitHub w Markdown. Prosty, dobry do podstawowych diagramow. Wystarczy wlozyc do bloku kodu z tagiem mermaid.
+„Mermaid — natywnie renderuje się na GitHub w Markdown. Prosty, dobry do podstawowych diagramow. Wystarczy wlozyc do bloku kodu z tagiem mermaid.
 
-PlantUML — wspierany przez GitLab, Confluence, IntelliJ. Bardziej rozbudowany, wiecej typow diagramow. Uzywany w enterprise projektach gdzie jest GitLab lub Jira/Confluence.
+PlantUML — wspierany przez GitLab, Confluence, IntelliJ. Bardziej rozbudowany, więcej typow diagramow. Uzywany w enterprise projektach gdzie jest GitLab lub Jira/Confluence.
 
 Fajna wlasciwosc: agent potrafi konwertowac miedzy nimi. Jedno podejscie: generujcie w Mermaid do szybkiej wizualizacji, konwertujcie do PlantUML kiedy repo jest na GitLab."
 
@@ -811,18 +811,18 @@ Fajna wlasciwosc: agent potrafi konwertowac miedzy nimi. Jedno podejscie: generu
 ```text
 Prompt — Diagramy UML dla projektu Sinsay (Mermaid):
 
-Jestes architektem systemow. Zaprojektuj chatbota Sinsay
-do obslugi reklamacji i zwrotow na podstawie PRD w docs/.
+Jesteś architektem systemow. Zaprojektuj chatbota Sinsay
+do obslugi reklamacji i zwrotów na podstawie PRD w docs/.
 
 Przygotuj 4 diagramy Mermaid:
 
-1) Sequence Diagram — pelny flow reklamacji:
+1) Sequence Diagram — pełny flow reklamacji:
    Uzytkownik → React Frontend → Spring Boot API →
-   OpenAI Vision API (analiza zdjecia) →
+   OpenAI Vision API (analiza zdjęcia) →
    Decision Service (czytanie docs MD) →
-   OpenAI API (decyzja) → odpowiedz do uzytkownika
+   OpenAI API (decyzja) → odpowiedz do użytkownika
 
-2) Class Diagram — glowne klasy Java:
+2) Class Diagram — główne klasy Java:
    ClaimRequest, ClaimResponse, ChatSession, ClaimDocument,
    ClaimService, VisionAnalysisService, DecisionService,
    ChatSessionRepository
@@ -835,33 +835,33 @@ Przygotuj 4 diagramy Mermaid:
 
 4) State Diagram — stany zgłoszenia:
    DRAFT → SUBMITTED → IMAGE_ANALYZED → DECISION_MADE → RESOLVED
-   + sciezka: DECISION_MADE → ESCALATED (gdy pewnosc za niska)
+   + ścieżka: DECISION_MADE → ESCALATED (gdy pewnosc za niska)
 
-Kazdy diagram w osobnym bloku ```mermaid ... ```
-Diagramy maja byc czytelne i zwiezle — bez nadmiernej szczegolowosci.
+Każdy diagram w osobnym bloku ```mermaid ... ```
+Diagramy maja być czytelne i zwiezle — bez nadmiernej szczegolowosci.
 Na poczatku kazdego — 1 zdanie opisu dla nowego developera.
 ```
 
 🎬 **PO GENEROWANIU DIAGRAMOW:**
 
-„Widzicie? To jest 10 minut pracy agenta zamiast 2 godzin Visio. Ale wazne: to sa diagramy do przemyslenia, nie do podpisania i schowania. Przejrzyjcie je krytycznie. Czy sequence diagram pokazuje gdzie sa miejsca ktore moga zawierac bledy? Czy class diagram ma odpowiednie zakresy odpowiedzialnosci?
+„Widzicie? To jest 10 minut pracy agenta zamiast 2 godzin Visio. Ale wazne: to są diagramy do przemyślenia, nie do podpisania i schowania. Przejrzyjcie je krytycznie. Czy sequence diagram pokazuje gdzie są miejsca które mogą zawierać błędy? Czy class diagram ma odpowiednie zakresy odpowiedzialności?
 
-Teraz konwertujmy na PlantUML — bo w enterprise srodowisku GitLab + Confluence to jest bardziej uzyteczne."
+Teraz konwertujmy na PlantUML — bo w enterprise srodowisku GitLab + Confluence to jest bardziej użyteczne."
 
 💬 WKLEJ NA CHAT:
 ```text
 Prompt — Konwersja Mermaid na PlantUML:
 
 Skonwertuj powyzsze 4 diagramy Mermaid na format PlantUML.
-PlantUML jest uzywany na GitLab i w IntelliJ (plugin PlantUML).
+PlantUML jest używany na GitLab i w IntelliJ (plugin PlantUML).
 
-Kazdy diagram w osobnym bloku @startuml ... @enduml
-Zachowaj te same informacje — dostosuj tylko skladnie.
+Każdy diagram w osobnym bloku @startuml ... @enduml
+Zachowaj te same informacje — dostosuj tylko składnię.
 
 Dodatkowo: dla Sequence Diagram dodaj komentarze (@note) przy krytycznych krokach:
-- gdzie moze wystapic blad sieci
+- gdzie może wystąpić błąd sieci
 - gdzie jest timeout ryzyko
-- gdzie sa dane wrazliwe klienta (RODO)
+- gdzie są dane wrazliwe klienta (RODO)
 ```
 
 💬 WKLEJ NA CHAT:
@@ -883,97 +883,97 @@ Konwersja online miedzy formatami:
 https://kroki.io/
 ```
 
-🏋️ **CWICZENIE 3 — UML jako narzedzie myslenia (15 min):**
+🏋️ **ĆWICZENIE 3 — UML jako narzędzie myslenia (15 min):**
 
 💬 WKLEJ NA CHAT:
 ```text
-Cwiczenie 3: UML jako narzedzie myslenia architektonicznego
+Ćwiczenie 3: UML jako narzędzie myslenia architektonicznego
 
 Krok 1 (7 min):
 Wygenerujcie Sequence Diagram dla Waszego projektu.
 Ale NAJPIERW dodajcie do prompta:
 "Zanim narysujesz diagram, opisz w 3 punktach:
- 1) jakie widzisz glowne wyzwania architektoniczne,
- 2) gdzie moze byc waskiegardlo wydajnosciowe,
+ 1) jakie widzisz główne wyzwania architektoniczne,
+ 2) gdzie może być waskiegardlo wydajnosciowe,
  3) co jest najmniej oczywiste w tym flow."
 
 Krok 2 (5 min):
-Przeczytajcie opis wyzwan — czy agent zidentyfikowal cos
+Przeczytajcie opis wyzwan — czy agent zidentyfikowal coś
 czego nie braliscie pod uwage?
 
 Krok 3 (3 min):
 Sprobujcie alternatywy:
 "Narysuj alternatywny Sequence Diagram gdzie JEDEN call
-do multimodalnego modelu zastepuje dwa osobne wywolania
-(vision + decision). Jakie sa zalety i wady tej architektury?"
+do multimodalnego modelu zastepuje dwa osobne wywołania
+(vision + decision). Jakie są zalety i wady tej architektury?"
 
-Na chat: 1 insight architektoniczny ktory dostaliscie od agenta
-(moze byc: potwierdzenie, zaskoczenie, lub 'agent sie myli, bo...')
+Na chat: 1 insight architektoniczny który dostaliscie od agenta
+(może być: potwierdzenie, zaskoczenie, lub 'agent się myli, bo...')
 ```
 
 🎬 **ADR — ARCHITECTURE DECISION RECORD:**
 
-„Po diagramach — ADR. To jest krotki dokument ktory zapisuje *dlaczego* podjalismy dana decyzje techniczna, jakie byly alternatywy, i jakie sa konsekwencje.
+„Po diagramach — ADR. To jest krótki dokument który zapisuje *dlaczego* podjęliśmy daną decyzję techniczną, jakie były alternatywy, i jakie są konsekwencje.
 
-ADR nie istnieje po to zeby wygladac profesjonalnie. ADR istnieje po to zeby za 6 miesiecy nie pytac 'DLACZEGO TO TAK ZROBIONO???' — i nie dostawac odpowiedzi 'hm, juz nie pamietam'. I zeby agent — kiedy bedzie modyfikowal kod — mial kontekst decyzji, a nie tylko wynik.
+ADR nie istnieje po to żeby wygladac profesjonalnie. ADR istnieje po to żeby za 6 miesiecy nie pytać 'DLACZEGO TO TAK ZROBIONO???' — i nie dostawac odpowiedzi 'hm, już nie pamietam'. I żeby agent — kiedy będzie modyfikowal kod — mial kontekst decyzji, a nie tylko wynik.
 
-Jesli nie piszecie ADR — Agent tez nie bedzie ich pisal automatycznie. Ale jezeli poprosicie, to zrobi to sprawnie i lepiej niz wiekszosci developerow gdyby mieli pisac o 23:00 przed deployem."
+Jeśli nie piszecie ADR — Agent tez nie będzie ich pisal automatycznie. Ale jezeli poprosicie, to zrobi to sprawnie i lepiej niz wiekszosci developerow gdyby mieli pisac o 23:00 przed deployem."
 
 💬 WKLEJ NA CHAT:
 ```text
 Prompt — ADR dla projektu Sinsay:
 
-Napisz trzy krotkie ADR dla projektu Sinsay Chatbot.
-Uzasadnij decyzje na podstawie research ktory przeprowadzilismy wczesniej.
+Napisz trzy krótkie ADR dla projektu Sinsay Chatbot.
+Uzasadnij decyzję na podstawie research który przeprowadziliśmy wcześniej.
 
 ADR-001: OpenAI Java SDK vs Spring AI
-ADR-002: Dwa osobne wywolania LLM (vision + decision) vs jedno multimodalne
+ADR-002: Dwa osobne wywołania LLM (vision + decision) vs jedno multimodalne
 ADR-003: SQLite jako baza sesji vs Redis vs PostgreSQL w MVP
 
 Format kazdego ADR:
-## ADR-XXX: [Tytul]
+## ADR-XXX: [Tytuł]
 **Status:** Accepted | Proposed | Superseded
 **Data:** [dzis]
 **Kontekst:** [Dlaczego ta decyzja byla potrzebna, 2-3 zdania]
-**Decyzja:** [Co zdecydowalismy i krotkie uzasadnienie]
-**Odrzucone alternatywy:** [Co rozwazalismy z 1-2 zdaniami dlaczego odrzucono]
+**Decyzja:** [Co zdecydowalismy i krótkie uzasadnienie]
+**Odrzucone alternatywy:** [Co rozważaliśmy z 1-2 zdaniami dlaczego odrzucono]
 **Konsekwencje:** [Plusy i minusy tej decyzji]
 **Trigger rewizji:** [Kiedy wrocic do tej decyzji — konkretny warunek]
 
-Pisz po polsku. Konkretnie. Kazdy ADR max pol strony A4.
+Pisz po polsku. Konkretnie. Każdy ADR max pol strony A4.
 Zapisz jako docs/ADR/ADR-001.md, ADR-002.md, ADR-003.md
 ```
 
 ---
 
-## 14:30–15:30 — Modul 2.3: MCP, Skills, Sub-agenci, CLAUDE.md
+## 14:30–15:30 — Moduł 2.3: MCP, Skills, Sub-agenci, CLAUDE.md
 ⏱️ 60 min
 
-🎬 **CO MOWIE:**
+🎬 **CO MÓWIĘ:**
 
-„Teraz modul ktory moze najbardziej zmienic sposob w jaki praujecie z agentami dluzej niz jeden dzien.
+„Teraz moduł który może najbardziej zmienic sposob w jaki praujecie z agentami dluzej niz jeden dzień.
 
-Wyobrazcie sobie ze zatrudniacie nowego seniora. Co mu dacie pierwszego dnia?
-- Dostep do narzedzi (IDE, baza, API keys)
+Wyobrazcie sobie że zatrudniacie nowego seniora. Co mu dacie pierwszego dnia?
+- Dostep do narzędzi (IDE, baza, API keys)
 - Opis projektu i zasady pracy (onboarding doc)
-- Liste specjalistow do ktorych moze sie zwrocic
+- Liste specjalistow do których może się zwrocic
 
 To samo robimy dla agenta:
-- MCP = dostep do narzedzi
+- MCP = dostep do narzędzi
 - CLAUDE.md = opis projektu i zasady
 - Sub-agenci = specjalisci do delegowania
 
-Bez tego agent startuje kazda sesje od zera. Z tym — startuje jako osoba ktora zna projekt od pierwszego zdania."
+Bez tego agent startuje każdą sesje od zera. Z tym — startuje jako osoba która zna projekt od pierwszego zdania."
 
-📺 **CO POKAZUJE:**
+📺 **CO POKAZUJĘ:**
 - konfiguracja MCP w settings.json
-- demo Context7 (juz znamy) + demo Playwright MCP
+- demo Context7 (już znamy) + demo Playwright MCP
 
 🎬 **MCP — PRZEGLAD:**
 
-„MCP — Model Context Protocol. Standard stworzony przez Anthropic, teraz pod Linux Foundation. Pozwala agentom uzywac zewnetrznych narzedzi poza swoim naturalnym zakresem.
+„MCP — Model Context Protocol. Standard stworzony przez Anthropic, teraz pod Linux Foundation. Pozwala agentom używać zewnętrznych narzędzi poza swoim naturalnym zakresem.
 
-Dzialaja jak API dla agenta: agent pyta 'co potrafisz?', serwer odpowiada lista narzedzi, agent ich uzywa. Nie wymaga restartowania agenta — MCP serwery sa dolaczone na starcie sesji.
+Dzialaja jak API dla agenta: agent pyta 'co potrafisz?', serwer odpowiada lista narzędzi, agent ich używa. Nie wymaga restartowania agenta — MCP serwery są dołączone na starcie sesji.
 
 Najpopularniejsze MCP które są użyteczne bezpośrednio dla Was:"
 
@@ -1009,44 +1009,44 @@ https://registry.smithery.ai/
 https://mcp.so/servers
 
 Weryfikacja w Claude Code:
-/mcp        ← lista aktywnych serwerow i ich narzedzi
-/doctor     ← diagnostyka calego srodowiska
+/mcp        ← lista aktywnych serwerow i ich narzędzi
+/doctor     ← diagnostyka calego środowiska
 ```
 
-🏋️ **CWICZENIE 4 — Context7 w akcji (10 min):**
+🏋️ **ĆWICZENIE 4 — Context7 w akcji (10 min):**
 
 💬 WKLEJ NA CHAT:
 ```text
-Cwiczenie 4: Context7 — research biblioteki z aktualna dokumentacja
+Ćwiczenie 4: Context7 — research biblioteki z aktualna dokumentacja
 
-Jesli nie macie context7 MCP — zainstalujcie teraz:
+Jeśli nie macie context7 MCP — zainstalujcie teraz:
 npm install -g @upstash/context7-mcp
-(Dodajcie do settings.json jak powyzej, zrestartujcie claude)
+(Dodajcie do settings.json jak powyżej, zrestartujcie claude)
 
-Wklejcie w claude (powinna byc dostepna context7):
+Wklejcie w claude (powinna być dostepna context7):
 
 "Uzywajac context7, pobierz dokumentacje Spring AI.
 Nastepnie pokaz mi:
 1) Jak skonfigurowac Spring AI z OpenAI API w Spring Boot
-2) Jak wykonac pierwsze wywolanie modelu GPT-4o z Javy
-3) Jak obsluzyc multimodalne wywolanie — tekst + obraz (vision)
-4) Jak skonfigurowac SQLite Vector Store dla RAG (jesli dostepne)
+2) Jak wykonac pierwsze wywołanie modelu GPT-4o z Javy
+3) Jak obsluzyc multimodalne wywołanie — tekst + obraz (vision)
+4) Jak skonfigurowac SQLite Vector Store dla RAG (jeśli dostepne)
 
 Pokazuj konkretne przykladowe kody Java.
-Zaznacz jesli cos jest nowoscia od Marca 2026."
+Zaznacz jeśli coś jest nowoscia od Marca 2026."
 
 Cel: skopiujcie przykladowe kody do docs/tech-notes/ w projekcie.
 ```
 
 🎬 **SKILLS:**
 
-„Skills — czyli umiejetnosci agentow. To sa gotowe workflow ktore definiujecie raz i uruchamiacie wiele razy jednym /komenda.
+„Skills — czyli umiejętności agentów. To są gotowe workflow które definiujecie raz i uruchamiacie wiele razy jednym /komenda.
 
-Najlepszy sposob na zrozumienie skilla: myslic o nim jak o przepisie kucharskim. Agent wie co robic krok po kroku, wie co sprawdzic, wie co zrobic jesli cos sie nie udalo. Bez Waszego ponownego tlumaczenia."
+Najlepszy sposób na zrozumienie skilla: myśleć o nim jak o przepisie kucharskim. Agent wie co robić krok po kroku, wie co sprawdzic, wie co zrobic jeśli coś się nie udalo. Bez Waszego ponownego tlumaczenia."
 
 💬 WKLEJ NA CHAT:
 ```text
-Skills — przykladowe definicje (dodaj do CLAUDE.md):
+Skills — przykładowe definicje (dodaj do CLAUDE.md):
 
 ## Skills
 
@@ -1060,25 +1060,25 @@ Skills — przykladowe definicje (dodaj do CLAUDE.md):
 6) Zapytaj czy git push
 
 ### /review
-Przeprowadz code review biezacych zmian (git diff vs main).
-Sprawdz kolejno:
+Przeprowadz code review bieżących zmian (git diff vs main).
+Sprawdź kolejno:
 1) Pokrycie testami dla nowej logiki biznesowej
 2) Bezpieczenstwo: injection, hardcoded credentials, RODO-wrazliwe dane
 3) Zgodnosc z konwencjami projektu z CLAUDE.md
-4) Czytelnosc i krotkie dokumentacja (Javadoc dla public API)
-5) Potencjalne bledy: null pointer, edge cases, threading
+4) Czytelnosc i krótkie dokumentacja (Javadoc dla public API)
+5) Potencjalne błędy: null pointer, edge cases, threading
 Wynik: lista ✅ OK / ⚠️ Uwaga / ❌ Blad z numerami linii
 
 ### /prd-sync
 Przeczytaj docs/PRD.md i biezace zmiany w kodzie.
-Sprawdz czy implementacja jest zgodna z acceptance criteria.
+Sprawdź czy implementacja jest zgodna z acceptance criteria.
 Zaproponuj aktualizacje PRD jezeli zaszly znaczace zmiany.
 Nie modyfikuj PRD bez mojej zgody.
 ```
 
 🎬 **SUB-AGENCI:**
 
-„Sub-agenci — specjalisci. Zamiast jednego agenta ktory robi wszystko sredniej jakosci, mozecie miec kilka agentow wyspecjalizowanych w konkretnych obszarach.
+„Sub-agenci — specjalisci. Zamiast jednego agenta który robi wszystko sredniej jakosci, możecie mieć kilka agentów wyspecjalizowanych w konkretnych obszarach.
 
 Dla projektu Sinsay — cztery naturalne role:"
 
@@ -1089,7 +1089,7 @@ Sub-agenci dla projektu Sinsay Chatbot — propozycja rol:
 ☕ BACKEND AGENT (Java Dev):
 Specjalizacja: Spring Boot, OpenAI Java SDK, REST API, domenowa logika
 Zna: konwencje Java projektu, error handling, security patterns
-NIE robi: zmiany w React UI, modyfikacje dokumentow proceduralnych
+NIE robi: zmiany w React UI, modyfikacje dokumentów proceduralnych
 
 🎨 FRONTEND AGENT (FE Dev):
 Specjalizacja: React, Vercel AI SDK / AssistantUI, formularz, UX
@@ -1097,9 +1097,9 @@ Zna: design system Sinsay, dostepnosc, state management
 NIE robi: zmiany w Spring Boot, zmiany w bazie danych
 
 📄 DOCUMENTS AGENT (Content/RAG):
-Specjalizacja: dokumenty MD (procedury reklamacji/zwrotow),
+Specjalizacja: dokumenty MD (procedury reklamacji/zwrotów),
                embeddingi, wyszukiwanie semantyczne
-Zna: procesy biznesowe Sinsay, strukture dokumentow
+Zna: procesy biznesowe Sinsay, strukture dokumentów
 NIE robi: kod aplikacji, zmiany w UI
 
 🧪 QA AGENT (Tester):
@@ -1114,24 +1114,24 @@ Jak uzyc sub-agenta w prompcie:
 
 🎬 **CLAUDE.md — FUNDAMENT:**
 
-„I teraz CLAUDE.md — fundament. To jest plik ktory mowi agentowi wszystko co musi wiedziec o projekcie zanim zacznie pracowac. Bez CLAUDE.md agent startuje kazda sesje od zera. Z CLAUDE.md — od razu wie gdzie jest i co moze robic.
+„I teraz CLAUDE.md — fundament. To jest plik, który mówi agentowi wszystko co musi wiedziec o projekcie zanim zacznie pracowac. Bez CLAUDE.md agent startuje każdą sesje od zera. Z CLAUDE.md — od razu wie gdzie jest i co może robić.
 
-Jest tez inny ciekawy efekt: dobry CLAUDE.md zmniejsza context rot. Kiedy sesja robi sie dluga i agent 'zapomina' o wczesniejszych ustaleniach — CLAUDE.md dziala jak reset. Nowa sesja, ten sam agent, pelna wiedza o projekcie."
+Jest tez inny ciekawy efekt: dobry CLAUDE.md zmniejsza context rot. Kiedy sesja robi się dluga i agent 'zapomina' o wczesniejszych ustaleniach — CLAUDE.md działa jak reset. Nowa sesja, ten sam agent, pelna wiedza o projekcie."
 
 💬 WKLEJ NA CHAT:
 ```text
 Prompt — Wygeneruj CLAUDE.md dla projektu Sinsay:
 
-Jestes doswiadczonym tech leadem.
+Jesteś doświadczonym tech leadem.
 
 Stwórz CLAUDE.md dla projektu "Sinsay Complaint & Returns Chatbot".
 
 Projekt:
-Chatbot do obslugi reklamacji i zwrotow produktow dla Sinsay (fashion eCommerce).
+Chatbot do obsługi reklamacji i zwrotów produktów dla Sinsay (fashion eCommerce).
 Stack: Java 21 + Spring Boot + OpenAI Java SDK lub Spring AI + React + SQLite.
-Flow: formularz (obraz + opis + typ) → analiza vision → analiza dokumentow → decyzja → chat.
+Flow: formularz (obraz + opis + typ) → analiza vision → analiza dokumentów → decyzja → chat.
 
-Uwzgledniaj sekcje:
+Uwzgledniaj sekcję:
 ## Project Overview
 ## Architecture (key components, tech decisions, dlaczego taki stack — linkuj do ADR)
 ## Development Guidelines
@@ -1141,53 +1141,53 @@ Uwzgledniaj sekcje:
    - Commit messages: conventional commits (feat/fix/refactor/test)
    - Jak radzic sobie z kluczami API (env variables, nigdy hardcode)
 ## Security Requirements
-   - Dane klientow (RODO): co wolno przechowywac, jak dlugo
+   - Dane klientów (RODO): co wolno przechowywac, jak długo
    - Klucze API: gdzie trzymac, jak przekazywac do agenta
    - Co wymaga security review przed mergem
 ## Agent Instructions
-   - Jakie kroki przed kazda wiekszą zmiana (sprawdz testy!)
-   - Kiedy pytac o zgode zanim cos wykona
-   - Jak sie zachowac gdy wymaganie jest niejasne
-   - Jak zgłaszac potencjalne problemy bezpieczenstwa
+   - Jakie kroki przed każdą wiekszą zmiana (sprawdź testy!)
+   - Kiedy pytać o zgodę zanim coś wykona
+   - Jak się zachowac gdy wymaganie jest niejasne
+   - Jak zgłaszac potencjalne problemy bezpieczeństwa
 ## Available Skills (/commit, /review, /prd-sync)
 ## Sub-agents (Backend, Frontend, Documents, QA — role i zakresy)
 
 Wymagania:
-- Plik ma byc praktyczny, nie ceremonialny
-- Max 200 linii — agent czyta to przy kazdej sesji, nie moze byc esej
-- Konkretne zasady, nie ogolniki
+- Plik ma być praktyczny, nie ceremonialny
+- Max 200 linii — agent czyta to przy kazdej sesji, nie może być esej
+- Konkretne zasady, nie ogólniki
 - Zapisz jako CLAUDE.md w root projektu
 ```
 
-🏋️ **CWICZENIE 5 — CLAUDE.md (15 min):**
+🏋️ **ĆWICZENIE 5 — CLAUDE.md (15 min):**
 
 💬 WKLEJ NA CHAT:
 ```text
-Cwiczenie 5: CLAUDE.md dla Waszego projektu
+Ćwiczenie 5: CLAUDE.md dla Waszego projektu
 
-1. Wygenerujcie CLAUDE.md uzywajac powyzszego prompta (8 min)
+1. Wygenerujcie CLAUDE.md używając powyższego prompta (8 min)
 
 2. Przeczytajcie krytycznie i znajdzcie 3 rzeczy do poprawienia.
    Typowe problemy:
    • Za ogolne zasady ("pisz czysty kod" to nie zasada)
    • Brakujace odwolanie do ADR decyzji
-   • Brak konkretnych linii "kiedy pytaj o zgode"
+   • Brak konkretnych linii "kiedy pytaj o zgodę"
 
-3. Poprawcie przez rozmowe z agentem:
-   "W sekcji Agent Instructions dodaj: przed kazdym DELETE
+3. Poprawcie przez rozmowę z agentem:
+   "W sekcji Agent Instructions dodaj: przed każdym DELETE
     lub DROP na bazie danych, zapytaj o potwierdzenie z opisem
     co zostanie usuniete."
 
 4. Test CLAUDE.md — otworzcie NOWA sesje claude i wklejcie:
    "Przeczytaj CLAUDE.md i odpowiedz:
-    1) Czym jest ten projekt i jaki problem rozwiazuje?
+    1) Czym jest ten projekt i jaki problem rozwiązuje?
     2) Jaki stack technologiczny i dlaczego?
-    3) Jakie sa kluczowe zasądy pracy?
-    4) Co mozesz robic samodzielnie, a o co musisz pytac?
-    5) Jakie skills i sub-agenci sa dostepni?"
+    3) Jakie są kluczowe zasądy pracy?
+    4) Co mozesz robić samodzielnie, a o co musisz pytać?
+    5) Jakie skills i sub-agenci są dostępni?"
 
-   Jesli agent odpowiada poprawnie — CLAUDE.md dziala ✅
-   Jesli zgaduje — CLAUDE.md trzeba poprawic 🔧
+   Jeśli agent odpowiada poprawnie — CLAUDE.md działa ✅
+   Jeśli zgaduje — CLAUDE.md trzeba poprawic 🔧
 ```
 
 ---
@@ -1195,40 +1195,40 @@ Cwiczenie 5: CLAUDE.md dla Waszego projektu
 ## 15:30–15:55 — Projekt: Decyzja o stacku + Kickoff
 ⏱️ 25 min
 
-🎬 **CO MOWIE:**
+🎬 **CO MÓWIĘ:**
 
 „Ostatni blok dnia — decyzja i pierwsze kroki.
 
-Macie teraz: PRD, diagramy, ADR, CLAUDE.md. To jest wiecej niz wiekszosci projektow ma po pierwszym sprincie. I to jest dlatego ze mieliscie agenta jako PM, architekta i tech writera.
+Macie teraz: PRD, diagramy, ADR, CLAUDE.md. To jest więcej niz wiekszosci projektow ma po pierwszym sprincie. I to jest dlatego że mieliscie agenta jako PM, architekta i tech writera.
 
-Teraz czas na inicjalizacje projektu. Pokaze sciezke 🟢. Dla 🟡 dam wskazowke do RAG. Dla 🔴 — dam linki i research prompt.
+Teraz czas na inicjalizacje projektu. Pokaze ścieżkę 🟢. Dla 🟡 dam wskazowke do RAG. Dla 🔴 — dam linki i research prompt.
 
-Ale najpierw — mam dla Was narzedzie ktore pomaga w pisaniu lepszych promptow. Nazwy: PromptCowboy."
+Ale najpierw — mam dla Was narzędzie które pomaga w pisaniu lepszych promptów. Nazwy: PromptCowboy."
 
 💬 WKLEJ NA CHAT:
 ```text
-PromptCowboy — ulepszanie promptow:
+PromptCowboy — ulepszanie promptów:
 https://www.promptcowboy.ai/
 
 Jak uzyc:
-1. Wklejcie Wasz prompt (np. system prompt dla agenta lub sekcje CLAUDE.md)
+1. Wklejcie Wasz prompt (np. system prompt dla agenta lub sekcję CLAUDE.md)
 2. Narzedzie zaproponuje ulepszenia struktury, jasnosci, precyzji
 3. Wroccie z lepszym promptem do agenta
 
 Dobre do:
-• Dlugich promptow systemowych
+• Długich promptów systemowych
 • Sekcji instrukcji dla sub-agentow
 • Skomplikowanych zapytan architektonicznych
-• Wszedzie gdzie czujecie ze agent "nie rozumie co chcecie"
+• Wszedzie gdzie czujecie że agent "nie rozumie co chcecie"
 ```
 
 🎬 **INICJALIZACJA PROJEKTU — SCIEZKA ZIELONA:**
 
-„Teraz inicjalizacja. Wysle Wam prompt. Jesli masz zainstalowany i uruchomiony claude z CLAUDE.md w projekcie — to ten prompt zainicjalizuje strukture Spring Boot sprzezong z Waszymi decyzjami architektonicznymi."
+„Teraz inicjalizacja. Wysle Wam prompt. Jeśli masz zainstalowany i uruchomiony claude z CLAUDE.md w projekcie — to ten prompt zainicjalizuje strukture Spring Boot sprzezong z Waszymi decyzjami architektonicznymi."
 
 💬 WKLEJ NA CHAT:
 ```text
-Prompt — Inicjalizacja projektu Spring Boot (sciezka 🟢):
+Prompt — Inicjalizacja projektu Spring Boot (ścieżka 🟢):
 
 Przeczytaj CLAUDE.md i docs/PRD.md i docs/ADR/ w tym projekcie.
 Na ich podstawie zainicjalizuj projekt Spring Boot.
@@ -1270,7 +1270,7 @@ Na końcu sprawdź: mvn compile
 ```text
 Prompt — Research dla sciezki 🔴 (LangGraph4j + CopilotKit):
 
-Jestes architektem znajacym Java i nowoczesne wzorce AI.
+Jesteś architektem znajacym Java i nowoczesne wzorce AI.
 
 Zbadaj nastepujace technologie i opisz jak moga wspolpracowac
 dla chatbota Sinsay:
@@ -1290,30 +1290,30 @@ Zakoncz ocena: czy warto dla MVP na tym kursie?
 Template startowy: https://github.com/bsorrentino/langgraph4j-copilotkit-template
 ```
 
-🏋️ **CWICZENIE 6 — Kickoff projektu (8 min):**
+🏋️ **ĆWICZENIE 6 — Kickoff projektu (8 min):**
 
 💬 WKLEJ NA CHAT:
 ```text
-Cwiczenie 6: Inicjalizacja projektu
+Ćwiczenie 6: Inicjalizacja projektu
 
-Wybierzcie sciezke i zacznijcie:
+Wybierzcie ścieżkę i zacznijcie:
 
 🟢 BEZPIECZNA:
-Wklejcie prompt inicjalizacji powyzej.
+Wklejcie prompt inicjalizacji powyżej.
 Sprawdzcie: mvn compile lub ./mvnw compile
 Otworzcie projekt w IntelliJ.
 
 🟡 SREDNIA (dodatkowo po 🟢):
 "Jak dodac SQLite Vector Store do Spring Boot dla prostego RAG?
- Chce przechowywac embeddingi dokumentow MD i wyszukiwac semantycznie.
+ Chce przechowywac embeddingi dokumentów MD i wyszukiwac semantycznie.
  Uzywaj context7 dla Spring AI vector store dokumentacji."
 
 🔴 ZAAWANSOWANA:
-Wklejcie research prompt LangGraph4j powyzej.
+Wklejcie research prompt LangGraph4j powyżej.
 Przeczytajcie analize.
-Zdecydujcie: kontynuujecie? Na czym sie skupicie?
+Zdecydujcie: kontynuujecie? Na czym się skupicie?
 
-Na koniec: kazdy wrzuca na chat:
+Na koniec: każdy wrzuca na chat:
 ✅ co ma uruchomione
 🔧 co wymaga jeszcze pracy
 ❓ gdzie jest blokada
@@ -1324,17 +1324,17 @@ Na koniec: kazdy wrzuca na chat:
 ## 15:55–16:00 — Podsumowanie dnia
 ⏱️ 5 min
 
-🎬 **CO MOWIE:**
+🎬 **CO MÓWIĘ:**
 
-„Koniec Dnia 2. Zrobielismy dzis naprawde duzo.
+„Koniec Dnia 2. Zrobielismy dzis naprawdę duzo.
 
 Rano domknelismy to czego brakowalo: sandbox, permissions, IntelliJ ACP, komendy Claude Code.
 
-A potem — caly cykl 'od pomyslu do projektu': PRD, research technologiczny, diagramy UML ktore wymuszaja myslenie architektoniczne, ADR, MCP, skills, sub-agenci, CLAUDE.md.
+A potem — cały cykl 'od pomysłu do projektu': PRD, research technologiczny, diagramy UML które wymuszają myślenie architektoniczne, ADR, MCP, skills, sub-agenci, CLAUDE.md.
 
-I projekt jest zainicjalizowany. Jutro agent nie bedzie zgadywal — bedzie budowal z planem.
+I projekt jest zainicjalizowany. Jutro agent nie będzie zgadywał — będzie budowal z planem.
 
-Jedno pytanie na koniec: co z dzisiejszego dnia bedzie dla Was najbardziej uzyteczne jutro w implementacji? 1 zdanie na chat."
+Jedno pytanie na koniec: co z dzisiejszego dnia będzie dla Was najbardziej użyteczne jutro w implementacji? 1 zdanie na chat."
 
 *[Poczekaj na odpowiedzi, skomentuj krotko 2-3]*
 
@@ -1349,11 +1349,11 @@ Jedno pytanie na koniec: co z dzisiejszego dnia bedzie dla Was najbardziej uzyte
 □ Diagramy UML: Mermaid + PlantUML
 □ ADR — kluczowe decyzje architektoniczne (docs/ADR/)
 □ Context7 MCP — research z aktualna dokumentacja
-□ CLAUDE.md — kontekst dla agentow
+□ CLAUDE.md — kontekst dla agentów
 □ Decyzja o tech stacku
 □ Projekt Spring Boot zainicjalizowany
 
-Jutro (Dzien 3): Implementacja
+Jutro (Dzień 3): Implementacja
 → Backend: claim processing, vision API, decision logic
 → Frontend: chat UI, formularz z uploadem
 → Testy i code review przez agenta
@@ -1362,11 +1362,11 @@ Jutro (Dzien 3): Implementacja
 
 💬 WKLEJ NA CHAT:
 ```text
-Opcjonalnie na wieczor (bez presji):
+Opcjonalnie na wieczór (bez presji):
 
-□ Przeczytaj PRD — popraw 3 rzeczy ktore sa za ogolne
-□ Zrob test CLAUDE.md (nowa sesja, 5 pytan diagnostycznych)
-□ Jesli sciezka 🔴 — zbadaj LangGraph4j template i zrob research
+□ Przeczytaj PRD — popraw 3 rzeczy które są za ogolne
+□ Zrob test CLAUDE.md (nowa sesja, 5 pytań diagnostycznych)
+□ Jeśli ścieżka 🔴 — zbadaj LangGraph4j template i zrob research
 
 Pytania? Wrzucajcie tu albo na grupowy kanal.
 Do jutra! 👋
@@ -1413,18 +1413,18 @@ Do jutra! 👋
 Jakie masz teraz uprawnienia? Wymien dokladnie:
 1) co mozesz wykonac bez pytania,
 2) co wymaga mojej zgody,
-3) czego absolutnie nie mozesz robic.
+3) czego absolutnie nie mozesz robić.
 Odpowiedz w punktach.
 ```
 
 ### B2 — AI jako PM (interrogation mode)
 ```text
-Jestes doswiadczonym product managerem pracujacym dla Sinsay —
+Jesteś doświadczonym product managerem pracujacym dla Sinsay —
 modowego eCommerce sprzedajacego ubrania.
 
-Musimy zbudowac chatbota do obslugi reklamacji i zwrotow produktow.
-Zanim napiszesz jakikolwiek dokument, zadaj mi 10 konkretnych pytan
-ktore pomoga Ci lepiej zrozumiec wymagania.
+Musimy zbudować chatbota do obsługi reklamacji i zwrotów produktów.
+Zanim napiszesz jakikolwiek dokument, zadaj mi 10 konkretnych pytań
+które pomoga Ci lepiej zrozumiec wymagania.
 
 Zasady:
 - Pytaj o JEDNO na raz i czekaj na odpowiedz
@@ -1439,33 +1439,33 @@ Zacznij od pierwszego pytania. Pisz po polsku.
 ### B3 — Generowanie PRD
 ```text
 Dziekuje za pytania. Na podstawie naszej rozmowy przygotuj PRD
-dla chatbota Sinsay do obslugi reklamacji i zwrotow.
+dla chatbota Sinsay do obsługi reklamacji i zwrotów.
 
 Format:
 ## 1. Executive Summary
 ## 2. Problem Statement
 ## 3. Persony (2-3 konkretne)
-## 4. Glowny Flow
-## 5. User Stories (min 8, format: "Jako [kto], chce [co], zeby [dlaczego]")
+## 4. Główny Flow
+## 5. User Stories (min 8, format: "Jako [kto], chcę [co], żeby [dlaczego]")
 ## 6. Acceptance Criteria (mierzalne!)
 ## 7. Out of Scope
 ## 8. Ograniczenia techniczne i biznesowe
 ## 9. Metryki sukcesu MVP
 
-Pisz po polsku. Konkretnie. PRD ma byc uzyteczny dla developera.
+Pisz po polsku. Konkretnie. PRD ma być uzyteczny dla developera.
 Zapisz jako docs/PRD.md
 ```
 
 ### B4 — Research tech stack
 ```text
-Jestes doswiadczonym architektem Java. Projektuję chatbota Sinsay.
+Jesteś doświadczonym architektem Java. Projektuję chatbota Sinsay.
 Stack bazowy: Java 21 + Spring Boot 3.x.
 
 Porownaj:
 1) Vercel AI SDK vs AssistantUI — do React chat UI
 2) OpenAI Java SDK vs Spring AI — do LLM z Javy
 3) SQLite vs H2 vs PostgreSQL — do sesji i historii czatu
-4) Dwa osobne wywolania LLM (vision + decision) vs jedno multimodalne
+4) Dwa osobne wywołania LLM (vision + decision) vs jedno multimodalne
 
 Dla kazdej opcji: zalety, wady, latwosc integracji, kiedy wybrac.
 Zakoncz rekomendacja dla MVP (small team, 3-4 tygodnie).
@@ -1474,16 +1474,16 @@ Uzywaj context7 do aktualnej dokumentacji bibliotek.
 
 ### B5 — Diagramy Mermaid
 ```text
-Jestes architektem systemow. Zaprojektuj chatbota Sinsay
-do obslugi reklamacji i zwrotow na podstawie PRD w docs/.
+Jesteś architektem systemow. Zaprojektuj chatbota Sinsay
+do obslugi reklamacji i zwrotów na podstawie PRD w docs/.
 
 Przygotuj 4 diagramy Mermaid:
-1) Sequence Diagram — pelny flow reklamacji (user → frontend → backend → LLM vision → LLM decision → response)
-2) Class Diagram — glowne klasy Java (ClaimRequest, ClaimResponse, ChatSession, ClaimDocument, ClaimService, VisionAnalysisService, DecisionService)
+1) Sequence Diagram — pełny flow reklamacji (user → frontend → backend → LLM vision → LLM decision → response)
+2) Class Diagram — główne klasy Java (ClaimRequest, ClaimResponse, ChatSession, ClaimDocument, ClaimService, VisionAnalysisService, DecisionService)
 3) Component Diagram — architektura (Frontend <-> Spring Boot API <-> OpenAI API; Spring Boot <-> SQLite; Spring Boot <-> File System)
 4) State Diagram — stany zgloszenia (DRAFT → SUBMITTED → IMAGE_ANALYZED → DECISION_MADE → RESOLVED; z ESCALATED)
 
-Kazdy w bloku ```mermaid ... ```
+Każdy w bloku ```mermaid ... ```
 Kazdemu diagram — 1 zdanie opisu dla nowego developera.
 ```
 
@@ -1591,13 +1591,13 @@ Jeśli masz 30+ minut opóźnienia:
 |---|---|
 | Sandbox ćwiczenie | Skróć do 3 min: tylko pokaz settings.json, bez ćwiczenia |
 | IntelliJ ACP | Pokaz demo, instalacja jako 🔵 homework |
-| Context7 cwiczenie | Pokaz live, uczestnicy robia samodzielnie po kursie |
+| Context7 ćwiczenie | Pokaz live, uczestnicy robią samodzielnie po kursie |
 | PlantUML | Pomin konwersje, zostaw tylko Mermaid |
-| Sub-agenci | Opisz koncepcje (2 min), CLAUDE.md generuj bez cwiczenia |
-| Inicjalizacja projektu | Przeslij prompt na chat, robia samodzielnie wieczorem |
+| Sub-agenci | Opisz koncepcje (2 min), CLAUDE.md generuj bez ćwiczenia |
+| Inicjalizacja projektu | Prześlij prompt na chat, robią samodzielnie wieczorem |
 
 **Minimum must-have na koniec Dnia 2:**
-1. Sandbox + permissions — rozumieja i maja settings.json
+1. Sandbox + permissions — rozumieją i mają settings.json
 2. PRD dla projektu Sinsay — wygenerowany i krytycznie przeczytany
 3. Przynajmniej 1 diagram Mermaid — Sequence Diagram
 4. ADR — chocby 1 decyzja udokumentowana
@@ -1606,16 +1606,16 @@ Jeśli masz 30+ minut opóźnienia:
 
 ---
 
-## APPENDIX E — Dla prowadzacego: punkt startowy jutro (Dzien 3)
+## APPENDIX E — Dla prowadzacego: punkt startowy jutro (Dzień 3)
 
 Po Dniu 2 uczestnicy maja:
 - PRD, ADR, CLAUDE.md, diagramy, zainicjalizowany projekt
-- Context7 MCP dziala
+- Context7 MCP działa
 - IntelliJ ACP + IntelliJ MCP Server skonfigurowany
-- Zdecydowana sciezka techologiczna
+- Zdecydowana ścieżka techologiczna
 
-Dzien 3 zaczyna sie od:
-1. Sprawdzenie czy projekt kompiluje sie u wszystkich (mvn compile)
+Dzień 3 zaczyna się od:
+1. Sprawdzenie czy projekt kompiluje się u wszystkich (mvn compile)
 2. Pierwsze implementacyjne zadanie dla agenta: "Zaimplementuj ClaimService.submitClaim() zgodnie z PRD i CLAUDE.md"
 3. Obserwacja jak agent rozumie projekt dzieki CLAUDE.md
 4. Praca z sub-agentami: Backend Agent dla logiki, Frontend Agent dla UI
