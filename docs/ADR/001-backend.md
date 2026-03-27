@@ -60,7 +60,7 @@ Controllers do no business logic. They validate input, call services, and map re
 - Reads `reklamacje.md` and `zwrot-30-dni.md` similarly
 - `getSystemPrompt(RETURN)` → concatenate: agent role description + regulamin content + zwrot-30-dni content + disclaimer instructions
 - `getSystemPrompt(COMPLAINT)` → concatenate: agent role description + regulamin content + reklamacje content + disclaimer instructions
-- Policy files path controlled by `POLICY_DOCS_PATH` environment variable (default: `./docs`)
+- Policy files path controlled by `POLICY_DOCS_PATH` environment variable (default: `../docs`, since the backend runs from the `backend/` directory)
 
 ### Configuration
 **OpenAIConfig** (Spring @Configuration)
@@ -212,7 +212,7 @@ The system prompt assembled by `PolicyDocService` must contain these sections in
 ### SQLite dialect and JPA config
 **Status:** Accepted
 **Context:** SQLite is not supported by Hibernate core. A community dialect is required.
-**Decision:** Use `org.hibernate.community.dialect.SQLiteDialect` from `hibernate-community-dialects` artifact. JPA auto-creates tables (`spring.jpa.hibernate.ddl-auto=update` in dev, `validate` in prod-like). DB file path: `./sinsay_poc.db` (configurable via `SQLITE_DB_PATH` env var if needed).
+**Decision:** Use `org.hibernate.community.dialect.SQLiteDialect` from `hibernate-community-dialects` artifact. JPA auto-creates tables (`spring.jpa.hibernate.ddl-auto=update` in dev, `validate` in prod-like). DB file path: `./sinsay_poc.db` relative to the `backend/` working directory (i.e., `backend/sinsay_poc.db` from the project root). Configurable via `SQLITE_DB_PATH` env var if needed.
 **Rejected alternatives:**
 - H2 file-mode: Compatible with Hibernate out of the box, but file is not a portable SQLite format — harder to inspect externally.
 **Consequences:**

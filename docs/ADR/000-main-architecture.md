@@ -31,7 +31,7 @@ This is a PoC — simplicity over completeness. No auth, no external integration
 ## 3. System Architecture
 
 ### Architecture pattern
-Monolith. Single deployable JAR. React SPA is built by Vite and bundled into `src/main/resources/static/` at build time. Spring Boot serves it as static resources. No separate frontend server in production.
+Monolith. Single deployable JAR. React SPA is built by Vite and bundled into `backend/src/main/resources/static/` at build time. Spring Boot serves it as static resources. No separate frontend server in production.
 
 In development: Vite dev server runs on port 5173 and proxies `/api/*` to Spring Boot on port 8080.
 
@@ -39,7 +39,6 @@ In development: Vite dev server runs on port 5173 and proxies `/api/*` to Spring
 
 ```
 sinsay-poc/
-├── pom.xml                          # Maven project
 ├── .env                             # Local env vars (gitignored)
 ├── docs/
 │   ├── PRD-Product-Requirements-Document.md
@@ -47,18 +46,20 @@ sinsay-poc/
 │   ├── regulamin.md                 # Terms of service (always loaded)
 │   ├── reklamacje.md                # Complaint policy (COMPLAINT intent only)
 │   └── zwrot-30-dni.md              # Return policy (RETURN intent only)
-├── src/main/java/com/sinsay/
-│   ├── config/          # AppConfig, OpenAIConfig, WebConfig (CORS)
-│   ├── controller/      # SessionController, ChatController
-│   ├── service/         # AnalysisService, ChatService, PolicyDocService
-│   ├── repository/      # SessionRepository, ChatMessageRepository
-│   └── model/           # Session, ChatMessage (JPA entities)
-├── src/main/resources/
-│   ├── application.properties
-│   └── static/          # Built React app lands here (Vite output)
+├── backend/
+│   ├── pom.xml                      # Maven project
+│   ├── src/main/java/com/sinsay/
+│   │   ├── config/      # AppConfig, OpenAIConfig, WebConfig (CORS)
+│   │   ├── controller/  # SessionController, ChatController
+│   │   ├── service/     # AnalysisService, ChatService, PolicyDocService
+│   │   ├── repository/  # SessionRepository, ChatMessageRepository
+│   │   └── model/       # Session, ChatMessage (JPA entities)
+│   └── src/main/resources/
+│       ├── application.properties
+│       └── static/      # Built React app lands here (Vite output)
 └── frontend/
     ├── package.json
-    ├── vite.config.ts   # output dir: ../src/main/resources/static/
+    ├── vite.config.ts   # output dir: ../backend/src/main/resources/static/
     └── src/
         ├── components/  # Form, ChatWindow, MessageBubble
         ├── hooks/       # useSession, useChat (wrapper)
@@ -193,7 +194,7 @@ One message in the conversation for a session.
 | `OPENAI_API_KEY` | OpenRouter API key | Yes | `sk-or-v1-...` |
 | `OPENAI_BASE_URL` | API base URL | Yes | `https://openrouter.ai/api/v1` |
 | `OPENAI_MODEL` | Model identifier on OpenRouter | No | `openai/gpt-4o-mini` |
-| `POLICY_DOCS_PATH` | Path to directory containing .md policy files | No | `./docs` |
+| `POLICY_DOCS_PATH` | Path to directory containing .md policy files | No | `../docs` (relative to `backend/`) |
 
 The OpenAI Java SDK automatically picks up `OPENAI_API_KEY` and `OPENAI_BASE_URL` from environment via `OpenAIOkHttpClient.fromEnv()`. `OPENAI_MODEL` and `POLICY_DOCS_PATH` are custom Spring Boot config properties.
 
@@ -246,7 +247,7 @@ The OpenAI Java SDK automatically picks up `OPENAI_API_KEY` and `OPENAI_BASE_URL
 ### SQLite for session persistence
 **Status:** Accepted
 **Context:** The PoC needs to persist session data and chat history. PostgreSQL/MySQL would require a running database server. Redis would require a separate service.
-**Decision:** SQLite via JPA (Hibernate Community Dialects for SQLite). Single file (`sinsay_poc.db`) in the project root. Zero setup, works out of the box.
+**Decision:** SQLite via JPA (Hibernate Community Dialects for SQLite). Single file (`sinsay_poc.db`) in the `backend/` directory. Zero setup, works out of the box.
 **Rejected alternatives:**
 - H2 in-file mode: Compatible but less standard, not usable by external tools.
 - PostgreSQL: Production-grade but requires Docker/server setup — overkill for PoC.

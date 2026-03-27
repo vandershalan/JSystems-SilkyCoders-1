@@ -203,7 +203,7 @@ App.tsx mounts
 ### Vite proxy in development
 **Status:** Accepted
 **Context:** In development, React runs on port 5173 and Spring Boot on port 8080. Direct API calls would fail due to CORS (or require configuring CORS on the backend for dev only).
-**Decision:** Vite dev server proxies `/api/*` to `http://localhost:8080` via `vite.config.ts` proxy configuration. In production, Spring Boot serves the React build from `static/` and the `/api/*` paths are on the same origin — no CORS needed.
+**Decision:** Vite dev server proxies `/api/*` to `http://localhost:8080` via `vite.config.ts` proxy configuration. Vite output directory is set to `../backend/src/main/resources/static/`. In production, Spring Boot serves the React build from `backend/src/main/resources/static/` and the `/api/*` paths are on the same origin — no CORS needed.
 **Consequences:**
 - (+) Clean separation: no CORS config needed in prod; dev matches prod behavior for API paths
 - (-) Proxy config must be maintained in `vite.config.ts`
