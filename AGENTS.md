@@ -1,94 +1,81 @@
 # Repository Guidelines
 
-**Primary references**: see `docs/PRD-Sinsay-PoC.md` and `docs/ADR-Sinsay-PoC.md` before making changes.
+## Project
 
-## Project Overview
-This repo hosts a Proof of Concept for Sinsay returns/complaints verification using multimodal AI. The target flow is a form-to-chat experience where users submit order context and images, then receive a streamed verdict in Polish. The backend is Spring Boot + Spring AI; the frontend is React 19 + assistant-ui. Streaming must follow the Vercel AI SDK Data Stream Protocol.
+**Sinsay AI PoC** — multimodal AI assistant for e-commerce returns (*Zwrot*) and complaints (*Reklamacja*). Users submit a form with photo; backend analyzes against Sinsay policy docs using an LLM; result is streamed as a chat conversation. All user-facing text in **Polish**.
 
-## Current vs. Planned Structure
-- **Current (in repo)**: single Spring Boot app under `src/` with Maven wrapper and minimal tests.
-- **Planned (ADR)**: a monorepo with separate `backend/` and `frontend/` directories and a build that bundles the frontend into the backend `static/` folder. If you introduce the monorepo layout, keep the existing root `pom.xml` aligned or migrate intentionally.
+**Key docs** (read before making changes):
+- `docs/PRD-Product-Requirements-Document.md` — product requirements and acceptance criteria
+- `docs/ADR/000-main-architecture.md` — architecture overview and data models
+- `docs/ADR/001-backend.md` — backend implementation details
+- `docs/ADR/002-frontend.md` — frontend implementation details
 
-## Project Structure & Module Organization
-- `src/main/java/com/silkycoders1/jsystemssilkycodders1/`: Spring Boot entry point.
-- `src/main/resources/`: `application.properties`, plus `static/` and `templates/` (frontend build output targets `static/`).
-- `src/test/java/com/silkycoders1/jsystemssilkycodders1/`: JUnit tests.
-- `docs/`: PRD, ADR, and research notes used as requirements.
-- `docs/sinay/`: terms of returns and complaints from Sinsay as input for AI Agent system prompt / knowledge base. 
+**Sinsay policy docs** (AI knowledge base): `docs/regulamin.md`, `docs/reklamacje.md`, `docs/zwrot-30-dni.md`
 
-### Target Modules (from ADR)
-If/when split into modules, use the following layout and names:
-- `backend/src/main/java/com/sinsay/`: `config/`, `controller/`, `service/`, `model/`.
-- `frontend/src/`: `app/` (screens), `components/ui/` (Shadcn), form + chat components.
+---
 
-## Build, Test, and Development Commands
-- `./mvnw spring-boot:run`: run backend locally.
-- `./mvnw test`: run JUnit tests.
-- `./mvnw clean package`: build JAR.
+## Repository Layout
 
-Planned commands once frontend exists:
-- `cd frontend && npm run dev`: run React app.
-- `cd frontend && npm run build`: build frontend into `backend/src/main/resources/static`.
+```
+backend/          Spring Boot app (Java 21, Maven)
+frontend/         React 19 SPA (TypeScript, Vite)
+docs/ADR/         Architecture Decision Records
+docs/             PRD + Sinsay policy markdown files
+```
 
-## Backend Implementation Rules (Critical)
-- **Streaming format**: SSE must emit Vercel Data Stream chunks (`0:"text"` and `8:[{...}]`), not raw JSON.
-- **Endpoint**: `POST /api/chat` returns `text/event-stream` and maps the Spring AI stream to the Vercel format.
-- **AI stack**: use `spring-ai-starter-model-openai` with chat model `gpt-4o` and `Media` attachments for images.
-- **Prompt policy**: select system prompt based on `intent` (`return` vs `complaint`). Respond to users in Polish.
-- **Persistence**: use SQLite with JPA; store request metadata, transcript, and verdicts. Never commit API keys.
+---
 
-## Frontend Implementation Rules (Planned)
-- **Form**: order number, purchase date, intent, description, image upload; validate with Zod.
-- **Chat UI**: `assistant-ui` components and `useChat` from Vercel AI SDK targeting `/api/chat`.
-- **Image handling**: resize images to max 1024px on the client before upload.
+## Commands
 
-## Coding Style & Naming Conventions
-- Java: 4-space indentation; standard Spring Boot conventions.
-- Packages: lowercase; keep package structure consistent with `com.silkycoders1...` or migrate to `com.sinsay` only if the ADR is implemented.
-- Classes: UpperCamelCase; methods/fields: lowerCamelCase.
-- Tests: `*Tests` suffix, mirrored package structure.
-- TypeScript/React (planned): use explicit types, PascalCase components, and file names matching component names.
+```bash
+# Backend
+cd backend && ./mvnw spring-boot:run     # run (requires OPENAI_API_KEY env var)
+cd backend && ./mvnw test                # run JUnit tests
+cd backend && ./mvnw clean package       # build JAR (output: backend/target/)
 
-# TypeScript Usage
-- Use TypeScript for all FE code; prefer interfaces over types
-- Avoid using the "any" type. Instead, prefer strict typing
-- Import types from external npm packages when possible
-- Create custom interfaces (preferred) or types for our custom code
-- Avoid type assertions with `as` or `!` when possible
-- Use functional components with TypeScript interfaces
-- Use strict mode in TypeScript for better type safety
-- Use Type Guards for additional safety in execution time!
+# Frontend
+cd frontend && npm run dev               # dev server (proxies /api/* to :8080)
+cd frontend && npm run build             # build into backend/src/main/resources/static/
+cd frontend && npm test                  # Vitest
+cd frontend && npm run lint              # ESLint
+cd frontend && npm run format:check      # Prettier
+```
 
-## Testing Guidelines
-- Backend: `spring-boot-starter-test` (JUnit 5). Add tests for the `/api/chat` SSE adapter and persistence mapping.
-- Frontend: use Vitest + Testing Library from the start; write both unit and integration tests for form validation, chat streaming, and UI state transitions.
-- Treat `npm test` (Vitest), `npm run lint` (ESLint), and `npm run format` / `npm run format:check` (Prettier) as the primary validation loop for frontend changes.
-- Always write tests alongside new components, classes or flows, not after the feature is complete. You should use them to validate if your changes work as expected.
+---
 
-## Commit & Pull Request Guidelines
-- Current commit history uses prefixes like `Docs:`. Follow `Area: short summary` (e.g., `Docs:`, `Feature:`, `Fix:`).
-- PRs should include: goal, scope of changes, and any required setup notes (env vars, database files, API keys).
+## Critical Integration: Vercel Data Stream Protocol
 
-## Security & Configuration
-- Configure keys in environment variables (e.g., `OPENAI_API_KEY`).
-- SQLite DB file should be local-only; avoid committing `.db` files.
+The frontend uses `useChatRuntime` from `@assistant-ui/react-ai-sdk`. The backend SSE response **must** use Vercel AI SDK data stream format or streaming will break:
 
-## Agent Workflow Expectations
-- Start by reading `docs/PRD-Sinsay-PoC.md` and `docs/ADR-Sinsay-PoC.md`.
-- Keep changes aligned with the PoC scope (no auth, no production deployment).
-- When adding new structure (backend/frontend), update this guide accordingly.
+```
+Content-Type: text/plain;charset=UTF-8
 
-## Documentation from Context7 MCP Tools
+0:"Hello"\n
+0:" world"\n
+d:{"finishReason":"stop"}\n
+```
 
-To get newest documentation for tools we use in this project, you may use below Context7 MCP libraries (handlers to use to fetch documentation):
+Escape rules: `"` → `\"`, newline → `\\n`. Use `ResponseBodyEmitter`, not `Flux`.
 
-- /websites/spring_io_projects_spring-ai
-- /spring-projects/spring-boot
-- /projectlombok/lombok
-- /openai/openai-java
-- /websites/platform_openai
-- /vercel/ai
-- /assistant-ui/assistant-ui
-- /reactjs/react.dev
-- /tailwindlabs/tailwindcss.com
-- /shadcn-ui/ui
+---
+
+## Coding Conventions
+
+**Java:** 4-space indent, Spring Boot conventions. Package: `com.sinsay`. Tests: `*Tests` suffix.
+
+**TypeScript:** Strict mode. Always annotate types. Prefer `interface` over `type`. No `any`, no `as`/`!` assertions. Use type guards for runtime narrowing. Functional components with TypeScript interfaces.
+
+---
+
+## Context7 MCP Library IDs
+
+| Library | Context7 ID |
+|---|---|
+| OpenAI Java SDK | `/openai/openai-java` |
+| Spring Boot | `/spring-projects/spring-boot` |
+| Lombok | `/projectlombok/lombok` |
+| Vercel AI SDK | `/vercel/ai` |
+| assistant-ui | `/assistant-ui/assistant-ui` |
+| React | `/reactjs/react.dev` |
+| Tailwind CSS | `/tailwindlabs/tailwindcss.com` |
+| Shadcn/ui | `/shadcn-ui/ui` |

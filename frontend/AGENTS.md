@@ -1,0 +1,66 @@
+# Frontend Guidelines
+
+See root `AGENTS.md` for project overview. This file covers frontend-specific implementation rules.
+
+## Tech Stack
+
+React 19, TypeScript (strict), Vite, Tailwind CSS, Shadcn/ui, assistant-ui, Vercel AI SDK
+
+## Component Structure
+
+```
+src/
+  App.tsx                 Root; reads sessionId from localStorage; renders IntakeForm or ChatView
+  components/
+    IntakeForm.tsx        5-field form + submit → POST /api/sessions
+    ChatView.tsx          Chat UI with assistant-ui + summary bar + "Nowa sesja" button
+    ImageUpload.tsx       Drag-and-drop + click; MIME/size validation; thumbnail preview
+  hooks/
+    useSession.ts         Read/write sessionId to localStorage (key: sinsay_session_id)
+  components/ui/          Shadcn/ui components
+```
+
+## Form Fields
+
+| Field | Type | Validation |
+|---|---|---|
+| `intent` | radio — `RETURN` \| `COMPLAINT` | required |
+| `orderNumber` | string | required |
+| `productName` | string | required |
+| `description` | string | required |
+| `image` | File | required; JPEG/PNG/WebP/GIF only; max 10MB |
+
+Validate with **Zod**. Show inline errors per field. Submit as `multipart/form-data` to `POST /api/sessions`.
+
+## Chat Integration
+
+Use `useChatRuntime` from `@assistant-ui/react-ai-sdk`:
+
+```ts
+const runtime = useChatRuntime({
+  api: `/api/sessions/${sessionId}/messages`,
+  initialMessages, // mapped from GET /api/sessions/{id} on session resume
+});
+```
+
+Pass `runtime` to `<AssistantRuntimeProvider>`. Do NOT use `useLocalRuntime`.
+
+## Session Flow
+
+**New session:** Form submit → loading state → success: `{sessionId, message}` → write `sessionId` to localStorage → `App` switches to `ChatView` → initial AI message rendered.
+
+**Resume session:** App mounts → reads `sinsay_session_id` from localStorage → renders `ChatView` → `GET /api/sessions/{id}` → maps history to `Message[]` → passed as `initialMessages`.
+
+**New session button:** Clear `sinsay_session_id` from localStorage → `App` switches back to `IntakeForm`.
+
+## Image Handling
+
+- Validate MIME type + file size on file selection (immediate inline error)
+- Resize to max 1024px on the longest side before upload (canvas resize)
+- Include as `image` field in multipart form
+
+## Vite Configuration
+
+- Dev proxy: `/api/*` → `http://localhost:8080`
+- Build output: `../backend/src/main/resources/static/`
+- All UI text must be in **Polish**
