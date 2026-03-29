@@ -161,6 +161,8 @@ These files must be loaded by the backend and injected into the AI system prompt
 
 ### Screen 1 — Intake Form
 
+**Wireframe** of the 1st screen for FE Agent to follow when creating UX design of the Form, and for QA agent to validate developed view against: `./wirefame-form.png`
+
 Full-page centered form. Sinsay logo at the top. Below it, a short heading: "Sprawdź zwrot lub reklamację" and a one-sentence description of what the tool does.
 
 The form contains:
@@ -175,6 +177,8 @@ Below the fields: a primary "Sprawdź" submit button (full width or centered, pr
 Validation errors appear inline below each field in red text. The form does not reset on error.
 
 ### Screen 2 — Chat (post-submission)
+
+**Wireframe** of the 2nd screen for FE Agent to follow when creating UX design of chat with decision view, and for QA agent to validate developed view against: `./wirefame-decision+chat.png`
 
 The form disappears. The chat window fills the screen.
 
