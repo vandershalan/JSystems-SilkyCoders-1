@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { formSchema, FormData, validateImage } from './validation'
+import { formSchema, type FormData, validateImage } from './validation'
 
 describe('Zod Form Validation', () => {
   const validFormData: FormData = {

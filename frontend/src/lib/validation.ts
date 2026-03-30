@@ -3,11 +3,11 @@ import { z } from 'zod'
 // Zod schema for form validation
 export const formSchema = z.object({
   intent: z.enum(['RETURN', 'COMPLAINT'], {
-    required_error: 'Proszę wybrać typ zgłoszenia',
+    error: 'Proszę wybrać typ zgłoszenia',
   }),
-  orderNumber: z.string().min(1, 'Numer zamówienia jest wymagany'),
-  productName: z.string().min(1, 'Nazwa produktu jest wymagana'),
-  description: z.string().min(1, 'Opis problemu jest wymagany'),
+  orderNumber: z.string().min(1, { error: 'Numer zamówienia jest wymagany' }),
+  productName: z.string().min(1, { error: 'Nazwa produktu jest wymagana' }),
+  description: z.string().min(1, { error: 'Opis problemu jest wymagany' }),
 })
 
 // TypeScript interfaces
