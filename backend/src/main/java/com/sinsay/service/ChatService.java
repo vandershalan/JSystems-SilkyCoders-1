@@ -73,7 +73,6 @@ public class ChatService {
                 // Persist new USER message
                 int nextSequenceNumber = history.size();
                 ChatMessage userMessage = ChatMessage.builder()
-                        .id(UUID.randomUUID())
                         .sessionId(session.getId())
                         .role(Role.USER)
                         .content(userContent)
@@ -132,7 +131,6 @@ public class ChatService {
 
                 // Persist ASSISTANT message with full content
                 ChatMessage assistantMessage = ChatMessage.builder()
-                        .id(UUID.randomUUID())
                         .sessionId(session.getId())
                         .role(Role.ASSISTANT)
                         .content(fullResponse.toString())
