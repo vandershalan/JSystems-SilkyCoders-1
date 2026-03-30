@@ -75,7 +75,12 @@ For session resume, map messages from `GET /api/sessions/{id}` to the `UIMessage
 - Build output: `../backend/src/main/resources/static/`
 - All UI text must be in **Polish**
 
+## Coding Conventions
+
+**TypeScript:** Strict mode. Always annotate types. Prefer `interface` over `type`. No `any`, no `as`/`!` assertions. Use type guards for runtime narrowing. Functional components with TypeScript interfaces.
+
 ## Completion Criteria
+
 - All tests and ESLint pass
 - Check the application visually, use puppeter to make a screen and align it with:
   - wireframe of the Form (view 1) `docs\wireframe-form.png`

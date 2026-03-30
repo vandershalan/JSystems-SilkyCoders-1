@@ -4,13 +4,18 @@
 
 **Sinsay AI PoC** — multimodal AI assistant for e-commerce returns (*Zwrot*) and complaints (*Reklamacja*). Users submit a form with photo; backend analyzes against Sinsay policy docs using an LLM; result is streamed as a chat conversation. All user-facing text in **Polish**.
 
-**Key docs** (read before making changes):
+**Key docs**
+DO NOT READ them every time! Follow the Plan - it should contain all necesary information.
+If you are sub-agent you should get all the details in prompt from main agent.
+Load these long detailed files only when you are in doubt and need full picture:
 - `docs/PRD-Product-Requirements-Document.md` — product requirements and acceptance criteria
 - `docs/ADR/000-main-architecture.md` — architecture overview and data models
 - `docs/ADR/001-backend.md` — backend implementation details
 - `docs/ADR/002-frontend.md` — frontend implementation details
 
-**Sinsay policy docs** (AI knowledge base): `docs/regulamin.md`, `docs/reklamacje.md`, `docs/zwrot-30-dni.md`
+**Sinsay policy docs**
+Sinsay AI Chat Agent knowledge base used to make decision when talking with the client:
+`docs/regulamin.md`, `docs/reklamacje.md`, `docs/zwrot-30-dni.md`
 
 ---
 
@@ -63,14 +68,6 @@ data: {"type":"text-end","id":"<uuid>"}
 ```
 
 Use `SseEmitter` (Spring MVC), not `Flux` or plain `ResponseBodyEmitter`. The `AssistantChatTransport` sends `{ messages, system, tools }` to the backend; extract only the last user message content.
-
----
-
-## Coding Conventions
-
-**Java:** 4-space indent, Spring Boot conventions. Package: `com.sinsay`. Tests: `*Tests` suffix.
-
-**TypeScript:** Strict mode. Always annotate types. Prefer `interface` over `type`. No `any`, no `as`/`!` assertions. Use type guards for runtime narrowing. Functional components with TypeScript interfaces.
 
 ---
 

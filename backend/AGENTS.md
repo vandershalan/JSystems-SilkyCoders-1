@@ -96,3 +96,7 @@ The system prompt sent to the LLM must include these 6 sections in order:
 **Policy doc selection** per intent:
 - `RETURN`: `regulamin.md` + `zwrot-30-dni.md`
 - `COMPLAINT`: `regulamin.md` + `reklamacje.md`
+
+## Coding Conventions
+
+**Java:** 4-space indent, Spring Boot conventions. Package: `com.sinsay`. Tests: `*Tests` suffix.
