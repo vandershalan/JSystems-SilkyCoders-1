@@ -9,10 +9,10 @@ const __dirname = path.dirname(__filename)
 
 // Real images from assets/example-images/
 const cloth2Jpg = fs.readFileSync(
-  path.resolve(__dirname, '../../../../assets/example-images/cloth2.jpg')
+  path.resolve(__dirname, '../../../assets/example-images/cloth2.jpg')
 )
 const cloth1Webp = fs.readFileSync(
-  path.resolve(__dirname, '../../../../assets/example-images/cloth1.webp')
+  path.resolve(__dirname, '../../../assets/example-images/cloth1.webp')
 )
 
 const screenshotsDir = path.join(__dirname, 'screenshots')

@@ -21,3 +21,18 @@ globalThis.ResizeObserver = class ResizeObserver {
     // do nothing
   }
 }
+
+// Mock scrollTo for jsdom (used by assistant-ui)
+Element.prototype.scrollTo = function () {
+  // do nothing
+}
+
+// Mock scrollIntoView for jsdom
+Element.prototype.scrollIntoView = function () {
+  // do nothing
+}
+
+// Mock getClientRects for jsdom
+Element.prototype.getClientRects = function () {
+  return [] as DOMRectList
+}

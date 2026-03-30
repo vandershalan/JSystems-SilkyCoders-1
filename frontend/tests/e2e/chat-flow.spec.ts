@@ -9,13 +9,13 @@ const __dirname = path.dirname(__filename)
 
 // Real images from assets/example-images/
 const cloth2Jpg = fs.readFileSync(
-  path.resolve(__dirname, '../../../../assets/example-images/cloth2.jpg')
+  path.resolve(__dirname, '../../../assets/example-images/cloth2.jpg')
 )
 const cloth3Jpg = fs.readFileSync(
-  path.resolve(__dirname, '../../../../assets/example-images/cloth3.jpg')
+  path.resolve(__dirname, '../../../assets/example-images/cloth3.jpg')
 )
 const cloth4Jpg = fs.readFileSync(
-  path.resolve(__dirname, '../../../../assets/example-images/cloth4.jpg')
+  path.resolve(__dirname, '../../../assets/example-images/cloth4.jpg')
 )
 
 async function uploadFileViaInput(page: Page, fileBuffer: Buffer, fileName: string, mimeType: string) {
