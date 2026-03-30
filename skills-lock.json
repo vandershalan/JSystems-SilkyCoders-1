@@ -1,6 +1,26 @@
 {
   "version": 1,
   "skills": {
+    "ai-sdk": {
+      "source": "vercel/ai",
+      "sourceType": "github",
+      "computedHash": "afdf97aa7adae2b9a42389ddb67e7418611bbd3d23604cad96c0f3ca194ab14a"
+    },
+    "assistant-ui": {
+      "source": "assistant-ui/skills",
+      "sourceType": "github",
+      "computedHash": "82394e859e4adb795729710c36ff20c6142e7670c3fa10e40cfcdf2c5367396c"
+    },
+    "java-architect": {
+      "source": "jeffallan/claude-skills",
+      "sourceType": "github",
+      "computedHash": "88a601632c7e1ce2788e31123fdf96050c8f45bcd2bf89b299a16965bb3e92df"
+    },
+    "java-junit": {
+      "source": "github/awesome-copilot",
+      "sourceType": "github",
+      "computedHash": "fbf3cb0d47ffb44bdb6e1ebcc4d89dd7083208efdfc5b88f316c8bc2b58250b5"
+    },
     "java-springboot": {
       "source": "github/awesome-copilot",
       "sourceType": "github",
