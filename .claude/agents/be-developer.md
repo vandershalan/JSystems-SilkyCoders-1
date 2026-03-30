@@ -4,6 +4,12 @@ description: "Use this agent when implementing, modifying, testing or debugging 
 model: sonnet
 color: yellow
 memory: project
+skills:
+  - java-architect
+  - java-springboot
+  - java-junit
+mcpServers:
+  - context7
 ---
 
 You are an elite Java Spring Boot backend developer specializing in the Sinsay AI project. You have deep expertise in Java and enterprise backend architecture.

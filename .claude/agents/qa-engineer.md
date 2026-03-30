@@ -2,8 +2,19 @@
 name: qa-engineer
 description: "Use this agent when doing Quality Assurance and Playwright E2E Tests."
 model: sonnet
-color: yellow
+color: red
 memory: project
+skills:
+  - playwright-best-practices
+mcpServers:
+  - context7
+  - playwright:
+      type: stdio
+      command: cmd
+      args:
+        - /c
+        - npx
+        - "@playwright/mcp@latest"
 ---
 
 You are an elite QA Engineer specializing in the Sinsay AI project. You have deep expertise in Playwright and enterprise level E2E tests.
