@@ -1,4 +1,5 @@
 ---
+name: audit-agents
 description: Audit and maintain agent configuration files (.claude/agents, AGENTS.md, CLAUDE.md, agent-memory). Checks for duplicates, outdated info, naming conflicts, wrong technical facts, and files over 200 lines. Fixes all issues and commits.
 ---
 
