@@ -90,7 +90,7 @@ public class ChatController {
         for (int i = messages.size() - 1; i >= 0; i--) {
             ChatRequest.ChatMessageItem item = messages.get(i);
             if ("user".equalsIgnoreCase(item.role())) {
-                return item.content();
+                return item.getTextContent();
             }
         }
         return null;

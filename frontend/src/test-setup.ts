@@ -34,5 +34,5 @@ Element.prototype.scrollIntoView = function () {
 
 // Mock getClientRects for jsdom
 Element.prototype.getClientRects = function () {
-  return [] as DOMRectList
+  return [] as unknown as DOMRectList
 }

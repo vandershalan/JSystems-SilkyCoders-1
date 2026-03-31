@@ -1,6 +1,7 @@
 package com.sinsay;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.TextNode;
 import com.sinsay.controller.dto.ChatRequest;
 import com.sinsay.controller.dto.ChatRequest.ChatMessageItem;
 import com.sinsay.model.ChatMessage;
@@ -239,7 +240,7 @@ class FullFlowIntegrationTests {
         );
 
         ChatRequest request = new ChatRequest(
-                List.of(new ChatMessageItem("user", "Kiedy dostanę zwrot?"))
+                List.of(new ChatMessageItem("user", new TextNode("Kiedy dostanę zwrot?")))
         );
 
         // Act: perform the SSE request

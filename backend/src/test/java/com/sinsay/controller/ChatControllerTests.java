@@ -1,6 +1,7 @@
 package com.sinsay.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.TextNode;
 import com.sinsay.controller.dto.ChatRequest;
 import com.sinsay.controller.dto.ChatRequest.ChatMessageItem;
 import com.sinsay.model.ChatMessage;
@@ -85,7 +86,7 @@ class ChatControllerTests {
         void testPostValidChatRequest_shouldReturnSseStreamWithCorrectHeader() throws Exception {
             // Arrange
             ChatRequest request = new ChatRequest(
-                    List.of(new ChatMessageItem("user", "Hello"))
+                    List.of(new ChatMessageItem("user", new TextNode("Hello")))
             );
 
             // Mock ChatService to immediately complete emitter
@@ -123,9 +124,9 @@ class ChatControllerTests {
             // Arrange - messages array with multiple messages, last one is user
             ChatRequest request = new ChatRequest(
                     List.of(
-                            new ChatMessageItem("user", "First message"),
-                            new ChatMessageItem("assistant", "Response"),
-                            new ChatMessageItem("user", "This is the last user message")
+                            new ChatMessageItem("user", new TextNode("First message")),
+                            new ChatMessageItem("assistant", new TextNode("Response")),
+                            new ChatMessageItem("user", new TextNode("This is the last user message"))
                     )
             );
 
@@ -161,7 +162,7 @@ class ChatControllerTests {
             // Arrange
             UUID unknownId = UUID.randomUUID();
             ChatRequest request = new ChatRequest(
-                    List.of(new ChatMessageItem("user", "Hello"))
+                    List.of(new ChatMessageItem("user", new TextNode("Hello")))
             );
 
             // Act & Assert
@@ -206,8 +207,8 @@ class ChatControllerTests {
             // Arrange - only assistant messages, no user messages
             ChatRequest request = new ChatRequest(
                     List.of(
-                            new ChatMessageItem("assistant", "Response 1"),
-                            new ChatMessageItem("assistant", "Response 2")
+                            new ChatMessageItem("assistant", new TextNode("Response 1")),
+                            new ChatMessageItem("assistant", new TextNode("Response 2"))
                     )
             );
 
@@ -247,7 +248,7 @@ class ChatControllerTests {
             chatMessageRepository.save(existingMsg2);
 
             ChatRequest request = new ChatRequest(
-                    List.of(new ChatMessageItem("user", "New message"))
+                    List.of(new ChatMessageItem("user", new TextNode("New message")))
             );
 
             // Capture the history list passed to ChatService
@@ -287,7 +288,7 @@ class ChatControllerTests {
 
             // We'll test that only the messages field matters
             ChatRequest request = new ChatRequest(
-                    List.of(new ChatMessageItem("user", "Hello"))
+                    List.of(new ChatMessageItem("user", new TextNode("Hello")))
             );
 
             doAnswer(invocation -> {
